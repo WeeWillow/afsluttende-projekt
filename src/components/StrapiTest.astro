@@ -1,0 +1,30 @@
+---
+const response = await fetch(
+  "https://pleasant-wealth-f15289152b.strapiapp.com/api/restaurants",
+);
+const strapi = await response.json();
+const OneRestaurant = strapi.data[0];
+const restaurants = strapi.data;
+---
+
+<p>I will hopefully hold data from strapi:</p>
+
+<h2>
+  Welcome to {OneRestaurant.Name} - I don't know why this had to be so fucking difficult.
+</h2>
+
+<ul>
+  {
+    restaurants.map((r: any) => (
+      <div>
+        <li>{r.Name}</li>
+        {/* <li>{r.Description[0].children[0].text}</li> */}
+        <li>
+          {r.Description.map((d: any) =>
+            d.children.map((c: any) => c.text).join(""),
+          ).join(" ")}
+        </li>
+      </div>
+    ))
+  }
+</ul>

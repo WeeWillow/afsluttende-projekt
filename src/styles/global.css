@@ -6,7 +6,13 @@
   --primary-400-t1: hsl(207, 43%, 84%);
   --primary-400-t2: hsl(207, 52%, 44%, 60%);
 
-  --secondary
+  --secondary-600-t1: hsl(36, 90%, 44%);
+  --secondary-500-t1: hsl(40, 68%, 54%);
+  --secondary-500-t2: hsl(40, 68%, 54%, 30%);
+  --secondary-400-t1: hsl(43, 96%, 90%);
+  --secondary-400-t2: hsl(43, 96%, 90%, 50%);
 
-  --accent
+  --accent-500-t1: hsl(0, 72%, 54%);
+  --accent-400-t1: hsl(0, 100%, 76%);
+  --accent-300-t1: hsl(0, 73%, 96%);
 }

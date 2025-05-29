@@ -5,7 +5,7 @@
 <footer>
   <section>
     <article>
-      <img id="foot-logo" src="../.././opdagDanmarkfootLogo.png" alt="" />
+      <img id="foot-logo" src="/opdagDanmarkLogo.png" alt="" />
       <div>
         <div class="foot-adress">
           <p>OpdagDanmark ApS</p>
@@ -91,6 +91,7 @@
 </footer>
 
 <style>
+  /* ------General------ */
   footer {
     background-color: var(--primary-600-t1);
     border-radius: var(--round-general);
@@ -111,6 +112,21 @@
 
   section:not(:last-of-type) {
     border-bottom: 1px solid var(--primary-400-t1);
+  }
+
+  /* ------Top section------ */
+  .foot-adress {
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+
+  .foot-links-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 400px;
+    margin: auto;
+    text-align: left;
   }
 
   .foot-links-container div {
@@ -140,12 +156,14 @@
     margin-block: 3px;
   }
 
+  /* ------Newsletter section------ */
   .foot-signup {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
 
+  /* ------MEDIA QUERIES------ */
   @media screen and (min-width: 1000px) {
     footer {
       text-align: left;
@@ -154,20 +172,55 @@
     section {
       display: flex;
       justify-content: space-between;
+      padding-block: 10px;
     }
 
+    /* ------Top section------ */
     .foot-links-container {
       justify-content: space-between;
       width: 600px;
       display: flex;
+      margin: 0;
+    }
+
+    /* ------Newsletter section------ */
+    .foot-newsletter-section {
+      align-items: center;
+      padding-block: 20px;
+
+      h2 {
+        margin-bottom: 10px;
+      }
     }
 
     .foot-newsletter {
       width: 600px;
     }
 
-    .foot-newsletter-section {
-      align-items: center;
+    .foot-signup {
+      margin-bottom: 0px;
+    }
+
+    .foot-signup form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .foot-signup input {
+      padding: 7px 16px;
+      border-radius: 6px;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .foot-signup button {
+      padding: 7px 16px;
+      background-color: var(--secondary-600-t1);
+      color: white;
+      border: none;
+      border-radius: var(--round-min);
+      margin-left: 10px;
     }
   }
 </style>

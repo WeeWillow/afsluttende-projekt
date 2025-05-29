@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 :root {
   /* -----Colors----- */
   --primary-700-t1: hsl(207, 52%, 24%);
@@ -36,6 +43,7 @@
   --round-general: 0.75rem;
   --round-25: 1rem;
   --round-50: 3.125rem;
+  --round-pill: 50rem;
 
   /* Text */
   --font-size-700: 3rem;

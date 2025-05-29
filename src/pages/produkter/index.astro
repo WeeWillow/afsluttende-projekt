@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GuideToDenmark from "../../components/GuideToDenmark.astro";
+import RecommendedPlaces from "../../components/RecommendedPlaces.astro";
+import Product from "../../components/Product.astro";
+
+const response = await fetch(
+  "https://young-gift-22aff10d38.strapiapp.com/api/products"
+);
+const data = await response.json();
+const products = data.data;
+---
+
+<Layout title="Shop">
+  <section>
+    <h1>Shop</h1>
+  </section>
+
+  <section>
+    <article>
+      <h2>Alle produkter</h2>
+      <!-- Indsæt filtrering komponent her -->
+    </article>
+    <article>
+      {products.map((product: any) => <Product product={product} />)}
+    </article>
+  </section>
+  <!-- Indsæt Flere produkter komponent her -->
+  <RecommendedPlaces />
+  <GuideToDenmark />
+</Layout>

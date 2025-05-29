@@ -2,15 +2,120 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
+import Map from "../components/Map.astro";
+import FocusEntryPoint from "../components/FocusEntryPoints.astro";
+import Article from "../components/Articles.astro";
+import GuideToDenmark from "../components/GuideToDenmark.astro";
+
+const responseHero = await fetch(
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-hero"
+);
+const responseAbout = await fetch(
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-about"
+);
+
+const dataHero = await responseHero.json();
+const dataAbout = await responseAbout.json();
+
+const homeHero = dataHero.data;
+const homeAbout = dataAbout.data;
+
 import { PhEnvelope } from "@phosphor-icons/vue";
-import Envelope from 'phosphor-astro/Envelope.astro';
+import Envelope from "phosphor-astro/Envelope.astro";
 ---
 
-<Layout title="test">
-  <!-- <p>
-    i think i am a slot, but dont tell anyone. shhh
-    <PhEnvelope :size=32 color="red"/>
-    <Envelope :size=32 color="red"/>
-  </p> -->
-  I live in the slot
+<Layout title="OpdagDanmark">
+  <section class="hero">
+    <article>
+      <div>
+        <h1>{homeHero.title}</h1>
+        <h2>{homeHero.subtitle}</h2>
+        <p>
+          {homeHero.content}
+        </p>
+      </div>
+
+      <div>
+        <h3>oplevelse</h3>
+        <search>
+          <form action="">
+            <input placeholder="oplevelser, teater, museum" />
+            <button>Søg</button>
+          </form>
+        </search>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <FocusEntryPoint />
+  </section>
+
+  <section class="aboutUs">
+    <img src="" alt="" />
+    <article>
+      <p>{homeAbout.type}</p>
+      <h2>{homeAbout.title}</h2>
+      <h3>{homeAbout.subtitle}</h3>
+      <p>{homeAbout.content}</p>
+      <a href="#">{homeAbout.cta}</a>
+
+      <p>{homeAbout.greeting}</p>
+      <h3>{homeAbout.signature}</h3>
+      <h3>{homeAbout.role}</h3>
+    </article>
+  </section>
+
+  <GuideToDenmark />
+
+  <section class="danmarksBedste">
+    <h2>Danmarks Bedste</h2>
+    <a href="#">Se alle afstemninger</a>
+    <p>
+      Vi hylder Danmarks flittige aktører. Vær med i kåringen af Danmarks
+      Bedste. Når du stemmer, deltager du samtidig i en konkurrence om en
+      præmie. Se de aktuelle afstemninger herunder og vær med til at løfte dine
+      favoritter frem.
+    </p>
+    <!-- DanmarksBedste komponent her -->
+  </section>
+  <section class="articles">
+    <h2>Udvalgte artikler</h2>
+    <p>
+      Har du lyst til et eller andet? Så kan vi stærkt anbefale de her
+      steder/partnere. Find deres profil og læs om dem eller noget
+    </p>
+    <Article />
+    <article>
+      <h3>Udforsk det vidunderlige danmark</h3>
+      <h4>Få inspiration til nye oplevelser - lige uden for døren</h4>
+      <p>
+        Danmark er et yndigt land, fyldt med smukke landskaber, hyggelige byer
+        og skjulte perler; fra hvide sandstrande og grønne skove til historiske
+        slotte og lokale oplevelser. Gennem vores artikler kan du gå på
+        opdagelse i alt det, Danmark har at byde på, og finde inspiration til
+        din næste rejse - uden at skulle rejse sydpå for at få en uforglemmelig
+        sommer.
+      </p>
+      <a href="">Udforsk alle artikler</a>
+    </article>
+  </section>
+
+  <Map />
+
+  <section class="shop">
+    <h2>Populært i shoppen</h2>
+    <a href="#">Alle produkter</a>
+    <p>
+      Har du lyst til et eller andet? Så kan vi stærkt anbefale de her
+      steder/partnere. Find deres profil og læs om dem eller noget
+    </p>
+  </section>
 </Layout>
+
+<!-- <p>
+      i think i am a slot, but dont tell anyone. shhh
+      <PhEnvelope :size=32 color="red"/>
+      <Envelope :size=32 color="red"/>
+    </p> -->
+<!-- I live in the slot -->

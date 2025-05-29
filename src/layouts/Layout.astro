@@ -21,10 +21,12 @@ const { title, description, image } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <p>Built with {Astro.generator}</p>
-    <Header />
-    <StrapiTest />
-    <slot />
-    <Footer />
+    <main>
+      <p>Built with {Astro.generator}</p>
+      <Header />
+      <StrapiTest />
+      <slot />
+      <Footer />
+    </main>
   </body>
 </html>

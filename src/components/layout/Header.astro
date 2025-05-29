@@ -1,9 +1,9 @@
 ---
-import BurgerMenu from "../modules/BurgerMenu.vue"
+import BurgerMenu from "../modules/BurgerMenu.vue";
 ---
 
 <header>
-  <nav>
+  <nav class="flex">
     <a class="nav-logo nav-left" href="/"><img src="" alt="" />home</a>
 
     <!-- desktop nav -->
@@ -23,31 +23,30 @@ import BurgerMenu from "../modules/BurgerMenu.vue"
     </div>
 
     <!-- mobile menu -->
-     <BurgerMenu client:load />
+    <BurgerMenu client:load />
   </nav>
 </header>
 
 <style>
-
   header {
-    padding: .5rem;
+    padding: 0.5rem;
   }
-nav {
-  padding: .5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid var(--primary-600-t1);
-  border-radius: var(--round-pill);
-}
+  nav {
+    position: relative;
+    padding: 0.375rem .75rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--primary-500-t2);
+    border-radius: var(--round-pill);
+  }
 
-.nav-desktop {
-  display: none;
-}
-
-@media screen and (min-width: 700px) {
   .nav-desktop {
-    display: block;
+    display: none;
   }
-}
+
+  @media screen and (min-width: 700px) {
+    .nav-desktop {
+      display: block;
+    }
+  }
 </style>

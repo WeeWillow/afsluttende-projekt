@@ -1,0 +1,53 @@
+---
+import BurgerMenu from "../modules/BurgerMenu.vue"
+---
+
+<header>
+  <nav>
+    <a class="nav-logo nav-left" href="/"><img src="" alt="" />home</a>
+
+    <!-- desktop nav -->
+    <ul class="nav-centre nav-desktop">
+      <li><a href="/artikler">Gå på opdagelse</a></li>
+      <li><a href="#">Danmarks bedste</a></li>
+      <li><a href="/company">Planlæg din tur</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="#">Om os</a></li>
+      <button>search</button>
+    </ul>
+
+    <div class="nav-right nav-desktop">
+      <button>Hent appen <span>download icon</span></button>
+      <a href="#">profile</a>
+      <a href="#">basket</a>
+    </div>
+
+    <!-- mobile menu -->
+     <BurgerMenu client:load />
+  </nav>
+</header>
+
+<style>
+
+  header {
+    padding: .5rem;
+  }
+nav {
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--primary-600-t1);
+  border-radius: var(--round-pill);
+}
+
+.nav-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .nav-desktop {
+    display: block;
+  }
+}
+</style>

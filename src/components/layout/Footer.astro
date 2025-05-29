@@ -1,0 +1,173 @@
+---
+
+---
+
+<footer>
+  <section>
+    <article>
+      <img id="foot-logo" src="../.././opdagDanmarkfootLogo.png" alt="" />
+      <div>
+        <div class="foot-adress">
+          <p>OpdagDanmark ApS</p>
+          <p>Østre Alle 102, 9000 Aalborg</p>
+        </div>
+        <p>CVR 40523162</p>
+      </div>
+    </article>
+    <article class="foot-links-container">
+      <div>
+        <h2>Aktuelt</h2>
+        <a href="">Vandreruter</a>
+        <a href="">Cykelruter</a>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <a href="">Nordjylland</a>
+        <a href="">Midtjylland</a>
+        <a href="">Sydjylland</a>
+        <a href="">Fyn</a>
+        <a href="">Sjælland</a>
+        <a href="">Bornholm</a>
+      </div>
+      <div>
+        <h2>For virksomheder</h2>
+        <a href="">Få din egen shop</a>
+        <a href="">KlubDanmark</a>
+        <a href="">Tilføj begivenhed</a>
+      </div>
+      <div class="foot-contact">
+        <h2>Kontakt os</h2>
+        <div>
+          <p>Mandag - Torsdag</p>
+          <p>09:00-15:30</p>
+        </div>
+        <div>
+          <p>Fredag</p>
+          <p>09:00-14:00</p>
+        </div>
+        <div>
+          <p>70 60 53 32</p>
+        </div>
+        <div>
+          <p>info@opdagdanmark.dk</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="foot-newsletter-section">
+    <article class="foot-newsletter">
+      <h2>Nyhedsbrev</h2>
+      <p>
+        Få vores gratis nyhedsbrev med inspiration til nye oplevelser i Danmark,
+        afstemninger med Danmarks Bedste og meget mere.
+      </p>
+      <p>
+        Det er 100% spamfrit og du kan til enhver tid afmelde direkte i
+        nyhedsbrevet.
+      </p>
+    </article>
+    <article class="foot-signup">
+      <search>
+        <form>
+          <input name="search" placeholder="email@email.com" />
+        </form>
+      </search>
+      <button>TILMELD</button>
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <p>© OpdagDanmark, 2025</p>
+    </article>
+    <article>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </article>
+  </section>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--primary-600-t1);
+    border-radius: var(--round-general);
+    padding: 32px 16px;
+
+    text-align: center;
+  }
+
+  p,
+  h2,
+  a {
+    color: white;
+  }
+
+  #foot-logo {
+    width: 300px;
+  }
+
+  section:not(:last-of-type) {
+    border-bottom: 1px solid var(--primary-400-t1);
+  }
+
+  .foot-links-container div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .foot-links-container a {
+    margin-block: 7px;
+  }
+
+  .foot-links-container h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .foot-contact div {
+    margin-bottom: 7px;
+  }
+
+  .foot-contact p {
+    margin: 6px;
+  }
+
+  .foot-contact div:nth-of-type(1) p,
+  .foot-contact div:nth-of-type(2) p {
+    margin-block: 3px;
+  }
+
+  .foot-signup {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    footer {
+      text-align: left;
+    }
+
+    section {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .foot-links-container {
+      justify-content: space-between;
+      width: 600px;
+      display: flex;
+    }
+
+    .foot-newsletter {
+      width: 600px;
+    }
+
+    .foot-newsletter-section {
+      align-items: center;
+    }
+  }
+</style>

@@ -2,16 +2,16 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
-import Map from "../components/Map.astro";
-import FocusEntryPoint from "../components/FocusEntryPoints.astro";
-import Article from "../components/Articles.astro";
-import GuideToDenmark from "../components/GuideToDenmark.astro";
+import Map from "../components/layout/Map.astro";
+import FocusEntryPoint from "../components/elements/CardFocusEntryPoint.astro";
+import Article from "../components/elements/CardArticle.astro";
+import GuideToDenmark from "../components/layout/GuideToDenmark.astro";
 
 const responseHero = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-hero"
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-hero",
 );
 const responseAbout = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-about"
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
 );
 
 const dataHero = await responseHero.json();
@@ -20,8 +20,8 @@ const dataAbout = await responseAbout.json();
 const homeHero = dataHero.data;
 const homeAbout = dataAbout.data;
 
-import { PhEnvelope } from "@phosphor-icons/vue";
-import Envelope from "phosphor-astro/Envelope.astro";
+// import { PhEnvelope } from "@phosphor-icons/vue";
+// import Envelope from "phosphor-astro/Envelope.astro";
 ---
 
 <Layout title="OpdagDanmark">

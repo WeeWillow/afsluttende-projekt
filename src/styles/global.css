@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -74,4 +76,18 @@
   --text-300: 300;
   --text-200: 200;
   --text-100: 100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+p,
+a {
+  font-family: "Krub", sans-serif;
 }

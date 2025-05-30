@@ -24,14 +24,15 @@
   --primary-500: hsl(207, 52%, 44%);
   --primary-500-t2: hsl(207, 52%, 44%, 60%);
   --primary-400: hsl(207, 43%, 84%);
-  --primary-400-t2: hsl(207, 52%, 44%, 60%);
-  --primary-400-t4: hsl(207, 52%, 44%, 10%);
+  --primary-400-t2: hsl(207, 43%, 84%, 60%);
+  --primary-400-t3: hsl(207, 43%, 84%, 30%);
+  --primary-400-t4: hsl(207, 43%, 84%, 15%);
 
-  --secondary-600: hsl(36, 90%, 44%);
-  --secondary-500: hsl(40, 68%, 54%);
-  --secondary-500-t3: hsl(40, 68%, 54%, 30%);
-  --secondary-400: hsl(43, 96%, 90%);
-  --secondary-400-t2: hsl(43, 96%, 90%, 50%);
+  --secondary-500: hsl(36, 90%, 44%);
+  --secondary-400: hsl(40, 68%, 54%);
+  --secondary-400-t3: hsl(40, 68%, 54%, 30%);
+  --secondary-300: hsl(43, 96%, 90%);
+  --secondary-300-t2: hsl(43, 96%, 90%, 50%);
 
   --accent-500: hsl(0, 72%, 54%);
   --accent-400: hsl(0, 100%, 76%);
@@ -41,12 +42,12 @@
   --utility-400: hsl(99, 51%, 68%);
   --utility-300: hsl(95, 40%, 94%);
 
-  --greyscale-500: hsl(226, 18%, 14%);
-  --greyscale-400: hsl(225, 14%, 28%);
-  --greyscale-400-t1: hsl(225, 14%, 28%, 80%);
-  --greyscale-300: hsl(226, 11%, 38%);
+  --greyscale-900: hsl(226, 18%, 14%);
+  --greyscale-700: hsl(225, 14%, 28%);
+  --greyscale-700-t1: hsl(225, 14%, 28%, 80%);
+  --greyscale-500: hsl(226, 11%, 38%);
   --greyscale-200: hsl(228, 11%, 73%);
-  --greyscale-100: hsl(42, 100%, 98%);
+  --greyscale-100: hsl(218, 100%, 99%);
   --greyscale-100-t3: hsl(42, 100%, 98%, 25%);
 
   /* -----Sizes-----*/

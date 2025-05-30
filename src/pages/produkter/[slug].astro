@@ -1,0 +1,16 @@
+---
+export async function getStaticPaths() {
+  const response = await fetch(
+    "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*"
+  );
+  const data = await response.json();
+  const products = data.data;
+
+  return products.map((product: any) => ({
+    params: { slug: product.title.toLowerCase() },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+---

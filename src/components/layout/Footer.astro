@@ -1,5 +1,6 @@
 ---
 import Phone from "phosphor-astro/Phone.astro";
+import Envelope from "phosphor-astro/Envelope.astro";
 ---
 
 <footer>
@@ -45,10 +46,12 @@ import Phone from "phosphor-astro/Phone.astro";
           <p>Fredag</p>
           <p>09:00-14:00</p>
         </div>
-        <div>
+        <div class="flex test">
+          <Phone width="24" height="24" color="white" />
           <p>70 60 53 32</p>
         </div>
-        <div>
+        <div class="flex test">
+          <Envelope width="24" height="24" color="white" />
           <p>info@opdagdanmark.dk</p>
         </div>
       </div>
@@ -77,7 +80,7 @@ import Phone from "phosphor-astro/Phone.astro";
     </article>
   </section>
 
-  <section>
+  <section class="foot-links-and-copyright">
     <article>
       <p>© OpdagDanmark, 2025</p>
     </article>
@@ -115,22 +118,23 @@ import Phone from "phosphor-astro/Phone.astro";
   }
 
   /* ------Top section------ */
+  a{
+    text-decoration: none;
+    border-bottom: 1px solid white;
+  }
+
   .foot-adress {
     margin-top: 5px;
     margin-bottom: 8px;
   }
 
   .foot-links-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 400px;
-    margin: auto;
-    text-align: left;
+    margin: 0 auto;
 
     div {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     a {
@@ -157,6 +161,18 @@ import Phone from "phosphor-astro/Phone.astro";
   }
 
   /* ------Newsletter section------ */
+  .foot-newsletter {
+    max-width: 500px;
+    margin: 0 auto;
+    h2 {
+      margin-block: 10px;
+    }
+  }
+
+  article.foot-newsletter > p:nth-child(3) {
+    margin-block: 15px;
+  }
+
   .foot-signup {
     display: flex;
     justify-content: center;
@@ -192,7 +208,25 @@ import Phone from "phosphor-astro/Phone.astro";
     margin-left: 10px;
   }
 
+  .test {
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .foot-links-and-copyright p {
+    margin-top: 20px;
+  }
+
   /* ------MEDIA QUERIES------ */
+  @media screen and (min-width: 400px) {
+    .foot-links-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 440px;
+    margin: 0 auto;
+
+  }
   @media screen and (min-width: 1000px) {
     footer {
       text-align: left;
@@ -207,8 +241,17 @@ import Phone from "phosphor-astro/Phone.astro";
     /* ------Top section------ */
     .foot-links-container {
       justify-content: space-between;
-      width: 650px;
       display: flex;
+      margin: 0;
+      text-align: left;
+      max-width: 650px;
+
+      div {
+        align-items: flex-start;
+      }
+    }
+
+    .foot-contact p {
       margin: 0;
     }
 
@@ -224,6 +267,7 @@ import Phone from "phosphor-astro/Phone.astro";
 
     .foot-newsletter {
       width: 600px;
+      margin: 0;
     }
 
     .foot-signup {

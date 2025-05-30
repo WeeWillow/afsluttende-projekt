@@ -4,10 +4,16 @@ import BurgerMenu from "../modules/BurgerMenu.vue";
 
 <header>
   <nav class="flex">
-    <a class="nav-logo nav-left" href="/"><img src="" alt="" />home</a>
+    <a class="nav-logo nav-left" href="/"
+      ><img
+        class="nav-logo-img flex"
+        src="/public/opdagDanmarkLogo.png"
+        alt=""
+      /></a
+    >
 
     <!-- desktop nav -->
-    <ul class="nav-centre nav-desktop">
+    <ul class="nav-centre nav-desktop flex">
       <li><a href="/artikler">Gå på opdagelse</a></li>
       <li><a href="#">Danmarks bedste</a></li>
       <li><a href="/company">Planlæg din tur</a></li>
@@ -32,12 +38,20 @@ import BurgerMenu from "../modules/BurgerMenu.vue";
     padding: 0.5rem;
   }
   nav {
+    background: var(--greyscale-100);
     position: relative;
-    padding: 0.375rem .75rem;
+    padding: 0.375rem 0.75rem;
     justify-content: space-between;
     align-items: center;
     border: 1px solid var(--primary-500-t2);
     border-radius: var(--round-pill);
+  }
+
+  .nav-logo {
+    img {
+      width: 10rem;
+      height: auto;
+    }
   }
 
   .nav-desktop {

@@ -1,5 +1,5 @@
 ---
-
+import Phone from "phosphor-astro/Phone.astro";
 ---
 
 <footer>
@@ -169,7 +169,8 @@
   }
 
   .foot-signup input {
-    padding: 7px 16px;
+    padding: 7px 20px;
+    text-align: left;
     border-radius: 6px;
     border: 1px solid var(--primary-400);
     background-color: var(--greyscale-100-t3);
@@ -206,7 +207,7 @@
     /* ------Top section------ */
     .foot-links-container {
       justify-content: space-between;
-      width: 600px;
+      width: 650px;
       display: flex;
       margin: 0;
     }
@@ -227,6 +228,14 @@
 
     .foot-signup {
       margin-bottom: 0px;
+    }
+
+    .foot-signup input {
+      padding: 7px 16px;
+    }
+
+    .foot-signup button {
+      padding: 7px 16px;
     }
   }
 </style>

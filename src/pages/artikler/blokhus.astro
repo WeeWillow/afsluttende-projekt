@@ -1,0 +1,245 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+
+import Breadcrumb from "../../components/modules/Breadcrumb.astro";
+---
+
+<Layout title="Artikel: Blokhus">
+  <section class="blokhus-hero-section">
+    <Breadcrumb />
+    <article>
+      <h1>Hold dig kølig i solen</h1>
+      <h1>Dyp tæerne ved Blokhus</h1>
+      <img src="/blokhusStrand.webp" alt="" />
+    </article>
+    <article class="blokhus-article-width">
+      <h2>Blokhus - strand, stemning og meget at lave</h2>
+      <p>
+        Det er i år 10 år siden det første fly landende på Blokhus strand,
+        hvilket blev startskuddet for et årti med højtflyvende oplevelser hvert
+        år i august.
+      </p>
+      <p>
+        Hele luftrummet over Blokhus strand fyldes med alt fra propelfly,
+        gyrokoptere, veteranfly og hjemmebyggede fly, når Erhvervsforeningen
+        Destination Blokhus inviterer til Blokhus Fly-in søndag den 18. august
+        2024. Det forventes, at eventen igen vil tiltrække tusindvis af gæster,
+        der samles på Blokhus Strand for at se de spændende fly lægge an til
+        landing på den brede, hvide sandstrand, med Vesterhavet som kulisse til
+        den ene side og de hvide klitter til den anden.
+      </p>
+    </article>
+  </section>
+  <section class="blokhus-articles-section">
+    <h2>Læs mere</h2>
+    <div>
+      <a href="#">
+        <article>
+          <h3>Ude I Det Fri I Hestehave Skov</h3>
+          <p>Gå en tur i sandet, bad i bølgerne eller se...</p>
+        </article>
+      </a>
+      <a href="#">
+        <article>
+          <h3>Oplev natur og strand ved Væggerløse</h3>
+          <p>Danmarks bedste strande. Ud over den ideelle beligg...</p>
+        </article>
+      </a>
+      <a href="#">
+        <article>
+          <h3>Glamping hos Naturlig på Korsgaarden</h3>
+          <p>Blot halvanden times kørsel fra København, finder du...</p>
+        </article>
+      </a>
+    </div>
+  </section>
+  <section class="blokhus-body-section blokhus-article-width">
+    <h2>Hvad kan man lave i Blokhus?</h2>
+    <img src="/strandvejenBlokhus.jpg" alt="" />
+    <p>
+      Det første fly, der lægger an til landing på Blokhus Strand, er det røde
+      hjemmebyggede Van’s RV-8, der har deltaget i samtlige Fly-in events i
+      Blokhus. Flyet, som er bygget af Kræn Hjortlund, var det første fly, der
+      for 10 år siden landede på Blokhus Strand, da man i 2014 afholdt det
+      første fly-in på stranden, dengang med deltagelse af tre fly.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  h1,
+  h2,
+  p {
+    color: var(--primary-700);
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    font-size: var(--font-size-500);
+    font-weight: var(--text-500);
+  }
+
+  p {
+    font-size: var(--font-size-400);
+    font-weight: var(--text-500);
+    margin-bottom: 10px;
+  }
+
+  .blokhus-hero-section {
+    flex-direction: column;
+    h1 {
+      text-align: center;
+      font-size: var(--font-size-600);
+      letter-spacing: 1.2px;
+    }
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: var(--round-25);
+      margin-bottom: 25px;
+    }
+  }
+
+  .blokhus-hero-section h1:nth-child(2) {
+    margin-bottom: 20px;
+  }
+
+  .blokhus-articles-section {
+    h3 {
+      position: absolute;
+      bottom: 80px;
+      left: 15px;
+      font-family: "Playfair Display", serif;
+      font-size: var(--font-size-500);
+    }
+
+    p {
+      position: absolute;
+      top: 130px;
+      left: 15px;
+      max-width: 370px;
+    }
+
+    a,
+    p {
+      color: white;
+      text-decoration: none;
+    }
+
+    article {
+      position: relative;
+      border-radius: var(--round-25);
+      width: 100%;
+      height: 200px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 15px;
+      background-position: center;
+    }
+  }
+
+  .blokhus-articles-section > div > a:nth-child(1) > article {
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.76),
+        rgba(0, 0, 0, 0)
+      ),
+      url("/hestehaveSkov.jpg");
+  }
+  .blokhus-articles-section > div > a:nth-child(2) > article {
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.76),
+        rgba(0, 0, 0, 0)
+      ),
+      url("/vaeggerloseStrand.jpg");
+  }
+  .blokhus-articles-section > div > a:nth-child(3) > article {
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.76),
+        rgba(0, 0, 0, 0)
+      ),
+      url("/glamping.jpg");
+  }
+
+  .blokhus-body-section {
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--round-25);
+      margin-bottom: 15px;
+    }
+  }
+
+  /* ------MEDIA QUERIES------ */
+  @media screen and (min-width: 700px) {
+    h2 {
+      margin-bottom: 15px;
+      font-size: var(--font-size-600);
+    }
+
+    p {
+      font-size: var(--font-size-400);
+    }
+
+    .blokhus-hero-section {
+      h1 {
+        /* font-size: var(--font-size-700); */
+        font-size: 3.5rem;
+      }
+    }
+    .blokhus-article-width {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .blokhus-articles-section {
+      article {
+        position: relative;
+      }
+
+      div {
+        display: flex;
+        gap: 20px;
+      }
+      a {
+        overflow: hidden;
+        text-decoration: none;
+        flex: 1 1 30%;
+      }
+
+      h3 {
+        max-width: 300px;
+        font-size: var(--font-size-600);
+        font-weight: var(--text-500);
+        top: 100px;
+      }
+
+      p {
+        top: 105px;
+      }
+    }
+
+    .blokhus-articles-section article h3,
+    .blokhus-articles-section article p {
+      position: relative;
+      color: white;
+    }
+
+    .blokhus-hero-section h1:nth-child(2) {
+      margin-bottom: 40px;
+    }
+
+    .blokhus-hero-section {
+      img {
+        margin-bottom: 40px;
+        height: 350px;
+      }
+    }
+  }
+</style>

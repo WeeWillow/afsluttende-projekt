@@ -4,7 +4,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
 ---
 
 <footer>
-  <section>
+  <section class="foot-top-section">
     <article>
       <img id="foot-logo" src="/opdagDanmarkLogo.png" alt="" />
       <div>
@@ -80,7 +80,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
     </article>
   </section>
 
-  <section class="foot-links-and-copyright">
+  <section class="foot-copyright-section">
     <article>
       <p>© OpdagDanmark, 2025</p>
     </article>
@@ -99,7 +99,6 @@ import Envelope from "phosphor-astro/Envelope.astro";
     background-color: var(--primary-600);
     border-radius: var(--round-general);
     padding: 32px 16px;
-
     text-align: center;
   }
 
@@ -118,17 +117,17 @@ import Envelope from "phosphor-astro/Envelope.astro";
   }
 
   /* ------Top section------ */
-  a{
+  a {
     text-decoration: none;
     border-bottom: 1px solid white;
   }
 
-  .foot-adress {
+  .foot-top-section .foot-adress {
     margin-top: 5px;
     margin-bottom: 8px;
   }
 
-  .foot-links-container {
+  .foot-top-section .foot-links-container {
     margin: 0 auto;
 
     div {
@@ -147,12 +146,14 @@ import Envelope from "phosphor-astro/Envelope.astro";
     }
   }
 
-  .foot-contact div {
-    margin-bottom: 7px;
-  }
+  .foot-contact {
+    div {
+      margin-bottom: 7px;
+    }
 
-  .foot-contact p {
-    margin: 6px;
+    p {
+      margin: 6px;
+    }
   }
 
   .foot-contact div:nth-of-type(1) p,
@@ -161,7 +162,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
   }
 
   /* ------Newsletter section------ */
-  .foot-newsletter {
+  .foot-newsletter-section .foot-newsletter {
     max-width: 500px;
     margin: 0 auto;
     h2 {
@@ -169,43 +170,43 @@ import Envelope from "phosphor-astro/Envelope.astro";
     }
   }
 
-  article.foot-newsletter > p:nth-child(3) {
+  .foot-newsletter-section article.foot-newsletter > p:nth-child(3) {
     margin-block: 15px;
   }
 
-  .foot-signup {
+  .foot-newsletter-section .foot-signup {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  }
 
-  .foot-signup form {
-    display: flex;
-    gap: 10px;
-  }
+    form {
+      display: flex;
+      gap: 10px;
+    }
 
-  .foot-signup input {
-    padding: 7px 20px;
-    text-align: left;
-    border-radius: 6px;
-    border: 1px solid var(--primary-400);
-    background-color: var(--greyscale-100-t3);
-    color: white;
-    font-size: 1rem;
-    outline: none;
+    input {
+      padding: 7px 20px;
+      text-align: left;
+      border-radius: 6px;
+      border: 1px solid var(--primary-400);
+      background-color: var(--greyscale-100-t3);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      padding: 7px 16px;
+      background: var(--secondary-600);
+      color: white;
+      border: none;
+      border-radius: var(--round-min);
+      margin-left: 10px;
+    }
   }
 
   .foot-signup input::placeholder {
     color: var(--primary-400);
-  }
-
-  .foot-signup button {
-    padding: 7px 16px;
-    background: var(--secondary-600);
-    color: white;
-    border: none;
-    border-radius: var(--round-min);
-    margin-left: 10px;
   }
 
   .test {
@@ -213,20 +214,21 @@ import Envelope from "phosphor-astro/Envelope.astro";
     align-items: center;
   }
 
-  .foot-links-and-copyright p {
+  .foot-copyright-section p {
     margin-top: 20px;
   }
 
   /* ------MEDIA QUERIES------ */
   @media screen and (min-width: 400px) {
     .foot-links-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 440px;
-    margin: 0 auto;
-
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
   }
+
   @media screen and (min-width: 1000px) {
     footer {
       text-align: left;
@@ -239,7 +241,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
     }
 
     /* ------Top section------ */
-    .foot-links-container {
+    .foot-top-section .foot-links-container {
       justify-content: space-between;
       display: flex;
       margin: 0;
@@ -251,7 +253,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
       }
     }
 
-    .foot-contact p {
+    .foot-top-section .foot-contact p {
       margin: 0;
     }
 
@@ -265,21 +267,21 @@ import Envelope from "phosphor-astro/Envelope.astro";
       }
     }
 
-    .foot-newsletter {
+    .foot-newsletter-section .foot-newsletter {
       width: 600px;
       margin: 0;
     }
 
-    .foot-signup {
+    .foot-newsletter-section .foot-signup {
       margin-bottom: 0px;
-    }
 
-    .foot-signup input {
-      padding: 7px 16px;
-    }
+      input {
+        padding: 7px 16px;
+      }
 
-    .foot-signup button {
-      padding: 7px 16px;
+      button {
+        padding: 7px 16px;
+      }
     }
   }
 </style>

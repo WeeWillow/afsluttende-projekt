@@ -12,6 +12,7 @@
     "@astrojs/vue": "^5.1.0",
     "@phosphor-icons/vue": "^2.2.1",
     "astro": "^5.8.0",
+    "astro-breadcrumbs": "^3.3.1",
     "phosphor-astro": "^2.1.0",
     "vue": "^3.5.14"
   }

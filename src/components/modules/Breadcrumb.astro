@@ -1,0 +1,13 @@
+---
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+const customHome = [
+  {
+    index: 0,
+    text: "Hjem",
+  },
+];
+---
+
+<Breadcrumbs customizeLinks={customHome} />

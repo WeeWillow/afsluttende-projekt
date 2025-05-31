@@ -63,9 +63,21 @@
   --utility-500: hsl(104, 35%, 43%);
   --utility-400: hsl(99, 51%, 68%);
   --utility-300: hsl(95, 40%, 94%);
-  --utility-gradient-blue-right: linear-gradient(to right,hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
-  --utility-gradient-blue-top: linear-gradient(to top,hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
-  --utility-gradient-blue-left: linear-gradient(to left,hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
+  --utility-gradient-blue-right: linear-gradient(
+    to right,
+    hsla(226, 18%, 14%, 75%),
+    hsla(207, 73%, 20%, 8%)
+  );
+  --utility-gradient-blue-top: linear-gradient(
+    to top,
+    hsla(226, 18%, 14%, 75%),
+    hsla(207, 73%, 20%, 8%)
+  );
+  --utility-gradient-blue-left: linear-gradient(
+    to left,
+    hsla(226, 18%, 14%, 75%),
+    hsla(207, 73%, 20%, 8%)
+  );
 
   --greyscale-900: hsl(226, 18%, 14%);
   --greyscale-700: hsl(225, 14%, 28%);
@@ -103,6 +115,37 @@
   --text-300: 300;
   --text-200: 200;
   --text-100: 100;
+
+  /* Astro Breadcrumb */
+  --color-link-breadcrumbs: var(--greyscale-900);
+  --spacing-vertical-separator-breadcrumbs: 30px;
+}
+
+.c-breadcrumbs__crumbs:where(.has-no-separators) {
+  column-gap: 0rem !important;
+}
+
+.c-breadcrumbs__link {
+  color: var(--color-link-breadcrumbs);
+  text-transform: capitalize;
+}
+
+a.c-breadcrumbs__link.is-current {
+  font-weight: 800;
+}
+
+.c-breadcrumbs__crumb {
+  margin-bottom: 20px;
+}
+
+.c-breadcrumbs__crumb::after {
+  content: "/";
+  margin: 0 1rem;
+  color: var(--greyscale-900);
+}
+
+.c-breadcrumbs__crumb:last-child::after {
+  content: "";
 }
 
 h1,

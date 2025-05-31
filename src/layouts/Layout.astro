@@ -37,8 +37,15 @@ const { title, description, image } = Astro.props;
   }
 
   main {
-    width: min(90vw, 1200px);
+    padding: 10rem 0 0 0;
+    width: 95vw;
     flex-direction: column;
     gap: 6rem;
+  }
+  
+  @media screen and (min-width: 700px) {
+    main {
+      width: min(90vw, 1200px);
+    }
   }
 </style>

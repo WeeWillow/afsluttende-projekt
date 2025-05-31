@@ -1,24 +1,38 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 import { PhDownloadSimple, PhArrowSquareOut } from "@phosphor-icons/vue";
 
-const props = defineProps({
-  label: {
-    type: String,
-    default: "Hent appen",
-  },
-  iconType: {
-    type: String,
-    default: "download", // 'download' eller 'external'
-  },
-  iconSize: {
-    type: Number,
-    default: 16,
-  },
-  variant: {
-    type: String,
-    default: "primary", // 'primary' eller 'outline'
-  },
+// default props i vue
+// const props = defineProps({
+//   label: {
+//     type: String,
+//     default: "Hent appen",
+//   },
+//   iconType: {
+//     type: String,
+//     default: "download", // 'download' eller 'external'
+//   },
+//   iconSize: {
+//     type: Number,
+//     default: 16,
+//   },
+//   variant: {
+//     type: String,
+//     default: "primary", // 'primary' eller 'outline'
+//   },
+// });
+
+// props med typescript - for at vue og astro skal samarbejde
+const props = withDefaults(defineProps<{
+  label?: string;
+  iconType?: string;
+  iconSize?: number;
+  variant?: string;
+}>(), {
+  label: "Hent appen",
+  iconType: "download",
+  iconSize: 14,
+  variant: "primary",
 });
 
 
@@ -39,39 +53,37 @@ function clickHandler() {
 
 <template>
   <a :class=computedClass @click="clickHandler">
-    <div class="nav-download-app-content">{{ label }}</div>
-    <div class="nav-download-app-icon">
-      <component :is="Icon" :size="iconSize" />
-    </div>
+    {{ label }}
+    <span class="nav-download-app-icon flex">
+      <component :is="Icon" :size="iconSize" weight="bold" />
+    </span>
   </a>
 </template>
 
 <style scoped>
 .function-button {
+  font-size: .875rem;
+  cursor: pointer;
+  width: fit-content;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 .5rem 0 .75rem;
+  gap: .5rem;
+  font-weight: 500;
+  text-transform: uppercase;
 
-  .nav-download-app-content,
-  .nav-download-app-icon {
-    width: 100%;
-    padding: .5rem .5rem;
-    border: none;
-    font-weight: 500;
+  span {
+    border-left: 1px solid var(--secondary-200);
+    padding: .5rem 0 .65rem .5rem;
+
   }
 
   &.primary {
-    gap: 1px;
-
-    .nav-download-app-content {
-      border-radius: var(--round-min) 0 0 var(--round-min);
-      background: var(--secondary-500);
-      color: var(--secondary-300);
-      text-align: center;
-    }
-
-    .nav-download-app-icon {
-      border-radius: 0 var(--round-min) var(--round-min) 0;
-      background: var(--secondary-500);
-      color: var(--secondary-300);
-    }
+    border: 1px solid var(--secondary-200);
+    background: var(--secondary-500);
+    border-radius: var(--round-min);
+    color: var(--secondary-200);
+    text-align: center;
   }
 
   &.outline {

@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import { PhList, PhCaretDown, PhMagnifyingGlass, PhDownloadSimple, PhUser, PhBasket } from "@phosphor-icons/vue";
 import ButtonFunction from '../modules/ButtonFunction.vue';
 
-// const menuOpen = ref(false);
-const menuOpen = ref(true);
+const menuOpen = ref(false);
+// const menuOpen = ref(true);
 const toggle = () => {
   menuOpen.value = !menuOpen.value
 }
@@ -36,37 +36,22 @@ const toggle = () => {
     </ul>
 
     <div class="nav-mobile-button-list flex">
-
       <!-- download app button-->
       <ButtonFunction />
-
-      <button class="nav-mobile-btn">
-        <a href="#" class="">
+      <div class="nav-mobile-users flex">
+        <a class="nav-mobile-btn flex" href="#">
           <PhUser :size="16" weight="fill" />
         </a>
-      </button>
-      <button class="nav-mobile-btn">
-        <a href="#">
+        <a class="nav-mobile-btn flex" href="#">
           <PhBasket :size="16" weight="fill" />
         </a>
-      </button>
+      </div>
     </div>
   </div>
 
 </template>
 
 <style scoped>
-.nav-mobile-btn {
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  border: 1px solid var(--primary-500-t2);
-  border-radius: var(--round);
-  aspect-ratio: 1;
-  background: none;
-
-}
-
 svg {
   color: var(--primary-600);
 }
@@ -92,7 +77,6 @@ svg {
   }
 
   .nav-mobile-point {
-    /* border-bottom: 1px solid var(--primary-400-t3); */
     border: 1px solid var(--primary-400-t3);
     border-radius: var(--round-min);
     padding: 1rem .75rem 1.25rem;
@@ -109,33 +93,30 @@ svg {
     background: var(--primary-400-t4);
     border: 1px solid var(--primary-400);
     border-radius: var(--round-pill);
-    padding: .375rem .5rem;
+    padding: .65rem;
     justify-content: end;
     margin: 1rem 0;
+
+    .nav-mobile-btn {
+      border: none;
+      padding: 0;
+    }
   }
 
   .nav-mobile-button-list {
-    justify-content: space-between;
+    align-items: center;
     gap: .5rem;
+    padding: 0 .25rem .5rem;
+    justify-content: space-between;
 
-    .nav-download-app {
-      padding: .5rem 1rem;
-      border: 1px solid;
-      background: grey;
-
-      .nav-download-app-icon {
-        background: yellow;
-      }
-
-      .nav-download-app-button {
-        background: skyblue;
-      }
+    .nav-mobile-users {
+      gap: .5rem;
     }
   }
 
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1200px) {
 
   .nav-mobile,
   .nav-mobile-btn {

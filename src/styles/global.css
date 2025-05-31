@@ -17,6 +17,20 @@
   display: flex;
 }
 
+.nav-mobile-btn {
+  border: 1px solid var(--primary-500-t2);
+  background: none;
+  aspect-ratio: 1 / 1;
+
+  justify-content: center;
+  align-items: center;
+  padding: .375rem;
+  width: fit-content;
+  height: fit-content;
+
+  border-radius: var(--round-pill);
+}
+
 :root {
   /* -----Colors----- */
   /* transparens intervaller: */
@@ -37,12 +51,12 @@
   --secondary-500: hsl(36, 90%, 44%);
   --secondary-400: hsl(40, 68%, 54%);
   --secondary-400-t3: hsl(40, 68%, 54%, 30%);
-  --secondary-300: hsl(43, 96%, 90%);
-  --secondary-300-t2: hsl(43, 96%, 90%, 50%);
+  --secondary-200: hsl(43, 96%, 90%);
+  --secondary-200-t2: hsl(43, 96%, 90%, 50%);
 
   --accent-500: hsl(0, 72%, 54%);
   --accent-400: hsl(0, 100%, 76%);
-  --accent-300: hsl(0, 73%, 96%);
+  --accent-100: hsl(0, 73%, 96%);
 
   --utility-500: hsl(104, 35%, 43%);
   --utility-400: hsl(99, 51%, 68%);

@@ -24,7 +24,7 @@
 
   justify-content: center;
   align-items: center;
-  padding: .375rem;
+  padding: 0.375rem;
   width: fit-content;
   height: fit-content;
 
@@ -49,8 +49,10 @@
   --primary-400-t4: hsl(207, 43%, 84%, 15%);
 
   --secondary-500: hsl(36, 90%, 44%);
+  --secondary-500-t1: hsla(36, 90%, 44%, 80%);
   --secondary-400: hsl(40, 68%, 54%);
   --secondary-400-t3: hsl(40, 68%, 54%, 30%);
+  --secondary-300: hsl(40, 68%, 70%);
   --secondary-200: hsl(43, 96%, 90%);
   --secondary-200-t2: hsl(43, 96%, 90%, 50%);
 
@@ -61,6 +63,9 @@
   --utility-500: hsl(104, 35%, 43%);
   --utility-400: hsl(99, 51%, 68%);
   --utility-300: hsl(95, 40%, 94%);
+  --utility-gradient-blue-right: linear-gradient(to right,hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
+  --utility-gradient-blue-top: linear-gradient(to top,hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
+  --utility-gradient-blue-left: linear-gradient(to left,hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
 
   --greyscale-900: hsl(226, 18%, 14%);
   --greyscale-700: hsl(225, 14%, 28%);
@@ -68,6 +73,7 @@
   --greyscale-500: hsl(226, 11%, 38%);
   --greyscale-200: hsl(228, 11%, 73%);
   --greyscale-100: hsl(218, 100%, 99%);
+  --greyscale-100-t2: hsl(42, 100%, 98%, 50%);
   --greyscale-100-t3: hsl(42, 100%, 98%, 25%);
 
   /* -----Sizes-----*/
@@ -100,12 +106,15 @@
 }
 
 h1,
-h2,
+h2 {
+  font-family: "Playfair Display", serif;
+}
+
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: "Athiti", sans-serif;
 }
 
 p,

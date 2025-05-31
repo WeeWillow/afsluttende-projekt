@@ -1,28 +1,76 @@
 ---
-
+import ButtonFunction from "../modules/ButtonFunction.vue";
 ---
 
-<section>
-  <h2>Din Guide til Danmark</h2>
-  <p>
-    Med OpdagDanmarks app har du altid inspiration, kort og guides lige ved
-    hånden
-  </p>
-
-  <p>Hent appen gratis i App Store eller Google Play.</p>
-  <a href="#">HENT APPEN</a>
+<section class="guide-section flex">
+  <img class="guide-section-image" src="/guide-section.png" alt="" />
+  <div class="guide-section-overlay"></div>
+  <div class="guide-section-content">
+    <h2>Din Guide til Danmark</h2>
+    <h3>
+      Med OpdagDanmarks app har du altid inspiration, kort og guides lige ved
+      hånden.
+    </h3>
+  </div>
+  <div class="guide-section-cta flex">
+    <p>Hent appen gratis i App Store eller Google Play.</p>
+    <ButtonFunction />
+  </div>
 </section>
 
 <style>
-  section {
-    background: var(--accent-300);
-    height: 25rem;
+  .guide-section {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 3.5rem;
+    border: 1px solid var(--primary-500);
+    justify-content: space-around;
+    background: var(--primary-400);
+    height: 22rem;
     flex-direction: column;
-    padding: 3rem 4rem;
     border-radius: var(--round-general);
+
+    color: var(--greyscale-100);
 
     h2 {
       font-size: 3rem;
+    }
+  }
+
+  .guide-section-image,
+  .guide-section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .guide-section-overlay {
+    backdrop-filter: blur(1px);
+    background: var(--utility-gradient-blue-top);
+    z-index: 1;
+  }
+
+  .guide-section-cta {
+    gap: .75rem;
+    flex-direction: column;
+  }
+
+  .guide-section-cta,
+  .guide-section-content {
+    z-index: 2;
+  }
+
+  .guide-section-content {
+    h3 {
+      font-size: 1.5rem;
+      padding: 0.25rem 0 0;
+      width: 35ch;
+      font-weight: 300;
+      line-height: 100%;
     }
   }
 </style>

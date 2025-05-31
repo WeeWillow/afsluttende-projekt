@@ -1,27 +1,75 @@
 ---
-
+import ButtonFunction from "../modules/ButtonFunction.vue";
 ---
 
-<section>
-  <h2>Få overblik gennem oplevelseskortet</h2>
-  <p>
-    OpdagDanmarks oplevelseskort samler alle de bedste områder, aktiviteter og
-    begivenheder i ét sted. Find den online eller i vores app!
-  </p>
-  <a href="#">Åbn kortet</a>
-  <a href="#">hent appen</a>
+<section class="map-section flex">
+  <img class="map-section-image" src="/map-section.png" alt="" />
+  <div class="map-section-overlay"></div>
+  <div class="map-section-content">
+    <h2>Få overblik gennem oplevelseskortet</h2>
+    <h3>
+      OpdagDanmarks oplevelseskort samler alle de bedste områder, aktiviteter og
+      begivenheder i ét sted. Find den online eller i vores app!
+    </h3>
+  </div>
+  <div class="map-section-buttons flex">
+    <ButtonFunction label="Åbn kortet" iconType="external" variant="outline" />
+    <ButtonFunction />
+  </div>
 </section>
 
 <style>
-  section {
-    background: var(--primary-400);
-    height: 15rem;
-    flex-direction: column;
+  .map-section {
+    position: relative;
+    overflow: hidden;
     padding: 1.5rem 2.5rem;
+    border: 1px solid var(--primary-500);
+    justify-content: space-between;
+    background: var(--primary-400);
+    height: 13rem;
+    flex-direction: column;
     border-radius: var(--round-general);
 
+    color: var(--greyscale-100);
+
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  .map-section-image,
+  .map-section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .map-section-overlay {
+    backdrop-filter: blur(2px);
+    background: var(--utility-gradient-blue-right);
+    z-index: 1;
+  }
+
+  .map-section-buttons {
+    gap: 0.5rem;
+  }
+
+  .map-section-buttons,
+  .map-section-content {
+    z-index: 2;
+  }
+
+  .map-section-content {
+    h3 {
+      font-size: 1.2rem;
+      padding: .25rem 0 0;
+      width: 60ch;
+      font-weight: 400;
+      line-height: 100%;
     }
   }
 </style>

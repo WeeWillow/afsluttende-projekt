@@ -73,23 +73,29 @@ function clickHandler() {
   text-transform: uppercase;
 
   span {
-    border-left: 1px solid var(--secondary-200);
-    padding: .5rem 0 .65rem .5rem;
-
+    padding: .4rem 0 .5rem .4rem;
   }
-
+  
   &.primary {
-    border: 1px solid var(--secondary-200);
+    border: 1px solid var(--secondary-300);
     background: var(--secondary-500);
     border-radius: var(--round-min);
     color: var(--secondary-200);
     text-align: center;
+    span {
+      border-left: 1px solid var(--secondary-300);
+    }
   }
-
+  
   &.outline {
+    backdrop-filter: blur(20px);
+    border-radius: var(--round-min);
     border: 1px solid var(--greyscale-100);
     background: var(--greyscale-100-t3);
     color: var(--greyscale-100);
+    span {
+      border-left: 1px solid var(--greyscale-100-t2);
+    }
   }
 }
 </style>

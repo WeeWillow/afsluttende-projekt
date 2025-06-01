@@ -1,0 +1,81 @@
+---
+const { title, date, image } = Astro.props;
+---
+
+<a href="#" class="events-card-link">
+  <article class="events-card-article">
+    <div class="events-img-container">
+      <img src={image} alt={title} />
+    </div>
+    <div class="events-card-content">
+      <p>{date}</p>
+      <h3>{title}</h3>
+    </div>
+  </article>
+</a>
+
+<style>
+  .events-card-link {
+    text-decoration: none;
+    width: 100%;
+    border: 1px solid var(--primary-700);
+    border-radius: var(--round-general);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .events-card-link:hover {
+    transform: scale(1.02);
+  }
+
+  .events-card-article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--primary-400-t2);
+    border-radius: var(--round-general);
+  }
+
+  .events-img-container {
+    margin: 5px;
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--round-general);
+      margin-bottom: -5px;
+    }
+  }
+
+  .events-card-content {
+    max-height: 200px;
+    background-color: var(--primary-700);
+    color: white;
+    padding: 0.5rem;
+    text-align: left;
+    border-radius: var(--round-general);
+    margin: 5px;
+    height: 100%;
+
+    p {
+      font-size: var(--font-size-300);
+      font-weight: var(--text-200);
+    }
+
+    h3 {
+      /* font-family: "Playfair Display", serif; */
+      font-size: var(--font-size-600);
+      font-weight: var(--text-700);
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .events-card-link {
+      max-width: 270px;
+    }
+  }
+</style>

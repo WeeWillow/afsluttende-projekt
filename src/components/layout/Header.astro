@@ -61,21 +61,24 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
 <style>
   header {
     width: min(95vw, 1200px);
-    padding: 0.75rem 0;
+    padding: 1rem 0;
     position: fixed;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 9999;
   }
 
   nav {
     box-shadow: var(--shadow-general);
-    background: var(--primary-100);
+    background: var(--primary-100-t1);
     position: relative;
     padding: 0.375rem 0.75rem;
     justify-content: space-between;
     align-items: center;
     border: 1px solid var(--primary-500-t2);
     border-radius: var(--round-pill);
+    backdrop-filter: blur(4px);
   }
 
   .nav-logo {
@@ -90,6 +93,10 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
   }
 
   @media screen and (min-width: 1200px) {
+    header {
+      padding: 1.5rem 0;
+    }
+
     .nav-desktop {
       display: flex;
       padding: 0;

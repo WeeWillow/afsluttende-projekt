@@ -6,30 +6,112 @@ const responseHero = await fetch(
 const dataHero = await responseHero.json();
 const homeHero = dataHero.data;
 ---
-<section class="hero-section">
-    <article>
-      <div>
-        <h1>{homeHero.title}</h1>
-        <h2>{homeHero.subtitle}</h2>
-        <p>
-          {homeHero.content}
-        </p>
-      </div>
 
-      <div>
-        <h3>oplevelse</h3>
-        <search>
-          <form action="">
-            <input placeholder="oplevelser, teater, museum" />
-            <button>Søg</button>
-          </form>
-        </search>
-      </div>
-    </article>
+<article class="hero-wrapper">
+  <section class="hero-section flex">
+    <img class="hero-section-image" src="/hero-section.jpg" alt="" />
+    <div class="hero-section-overlay"></div>
+    <div class="hero-section-content">
+      <h1>{homeHero.title}</h1>
+      <h2>{homeHero.subtitle}</h2>
+      <p>{homeHero.content}</p>
+    </div>
+    <div class="hero-section-search">
+      <h3>oplevelse</h3>
+      <search>
+        <form action="">
+          <input placeholder="oplevelser, teater, museum" />
+          <button>Søg</button>
+        </form>
+      </search>
+    </div>
   </section>
+</article>
 
 <style>
+  .hero-wrapper {
+    width: min(98vw, 1400px);
+    margin-left: calc(50% - min(49vw, 700px));
+    margin-top: -155px;
+    margin-bottom: -6rem;
+  }
+
   .hero-section {
-    background: red;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2.5rem;
+    border: 1px solid var(--primary-500);
+    justify-content: center;
+    gap: 7rem;
+    background: var(--primary-400);
+    height: 90vh;
+    flex-direction: column;
+    border-radius: var(--round-25);
+    color: var(--greyscale-100);
+  }
+
+  .hero-section-image {
+    top: 0;
+    left: -100%;
+    width: auto;
+  }
+
+  .hero-section-image,
+  .hero-section-overlay {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-section-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(2px);
+    background: var(--utility-gradient-blue-right);
+    z-index: 1;
+  }
+
+  .hero-section-content,
+  .hero-section-search {
+    z-index: 2;
+  }
+
+  .hero-section-content {
+    h3 {
+      font-size: 1.2rem;
+      padding: 0.25rem 0 0;
+      width: 60ch;
+      font-weight: 400;
+      line-height: 100%;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .hero-section-image {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    main {
+      width: min(90vw, 1200px);
+    }
+
+    .hero-section-image {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .hero-wrapper {
+      margin-top: -150px;
+    }
+
+    .hero-section {
+      border-radius: var(--round-50);
+    }
   }
 </style>

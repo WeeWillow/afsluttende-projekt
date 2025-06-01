@@ -16,26 +16,28 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
 
     <!-- desktop nav -->
     <ul class="nav-centre nav-desktop">
-      <li>
+      <li class="nav-centre-link">
         <a class="flex" href="/artikler"
           >Gå på opdagelse
           <CaretDown width="16" height="16" />
         </a>
       </li>
-      <li>
+      <li class="nav-centre-link">
         <a class="flex" href="#"
           >Danmarks bedste
           <CaretDown width="16" height="16" />
         </a>
       </li>
-      <li>
+      <li class="nav-centre-link">
         <a class="flex" href="/company"
           >Planlæg din tur
           <CaretDown width="16" height="16" />
         </a>
       </li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="#">Om os</a></li>
+      <li class="nav-centre-link">
+        <a href="/shop">Shop</a>
+      </li>
+      <li class="nav-centre-link"><a href="#">Om os</a></li>
       <button class="nav-mobile-btn flex">
         <MagnifyingGlass width="16" height="16" />
       </button>
@@ -98,6 +100,14 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
       gap: 0.5rem;
       align-items: center;
 
+      .nav-centre-link {
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+
       a {
         text-decoration: none;
         align-items: center;
@@ -107,7 +117,6 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
         border: 1px solid hsla(0, 0%, 100%, 0);
         font-size: 0.875rem;
         font-weight: 500;
-        transition: all 150ms ease-in-out;
         &:hover {
           border: 1px solid var(--greyscale-100);
           background: var(--greyscale-100-t2);
@@ -130,8 +139,9 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
 
     .nav-mobile-btn {
       cursor: pointer;
-      transition: all 150ms ease-in-out;
+      transition: all 200ms ease-in-out;
       &:hover {
+        transform: scale(1.1);
         border-color: var(--greyscale-100);
         background: var(--greyscale-100-t2);
         svg {

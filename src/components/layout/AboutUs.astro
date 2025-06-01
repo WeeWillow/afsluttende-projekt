@@ -1,0 +1,44 @@
+---
+const responseAbout = await fetch(
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
+);
+
+const dataAbout = await responseAbout.json();
+
+const homeAbout = dataAbout.data;
+---
+
+<section class="aboutUs-section flex">
+  <img src="/hestehaveSkov.jpg" alt="" />
+  <article>
+    <h4>{homeAbout.type}</h4>
+    <h2>{homeAbout.title}</h2>
+    <h3>{homeAbout.subtitle}</h3>
+    <p>{homeAbout.content}</p>
+    <a href="#">{homeAbout.cta}</a>
+
+    <p>{homeAbout.greeting}</p>
+    <h3>{homeAbout.signature}</h3>
+    <h3>{homeAbout.role}</h3>
+  </article>
+</section>
+
+<style>
+  .aboutUs-section {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    img { 
+      border-radius: var(--round-min);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .aboutUs-section {
+    }
+  }
+</style>

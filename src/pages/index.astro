@@ -7,14 +7,9 @@ import FocusEntryPoint from "../components/elements/CardFocusEntryPoint.astro";
 import Article from "../components/elements/CardArticle.astro";
 import GuideToDenmark from "../components/layout/GuideToDenmark.astro";
 import ForsideHero from "../components/layout/ForsideHero.astro";
+import AboutUs from "../components/layout/AboutUs.astro";
 
-const responseAbout = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
-);
 
-const dataAbout = await responseAbout.json();
-
-const homeAbout = dataAbout.data;
 
 // import { PhEnvelope } from "@phosphor-icons/vue";
 // import Envelope from "phosphor-astro/Envelope.astro";
@@ -27,20 +22,7 @@ const homeAbout = dataAbout.data;
     <FocusEntryPoint />
   </section>
 
-  <section class="aboutUs">
-    <img src="" alt="" />
-    <article>
-      <p>{homeAbout.type}</p>
-      <h2>{homeAbout.title}</h2>
-      <h3>{homeAbout.subtitle}</h3>
-      <p>{homeAbout.content}</p>
-      <a href="#">{homeAbout.cta}</a>
-
-      <p>{homeAbout.greeting}</p>
-      <h3>{homeAbout.signature}</h3>
-      <h3>{homeAbout.role}</h3>
-    </article>
-  </section>
+  <AboutUs />
 
   <GuideToDenmark />
 

@@ -16,26 +16,28 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
 
     <!-- desktop nav -->
     <ul class="nav-centre nav-desktop">
-      <li>
+      <li class="nav-centre-link">
         <a class="flex" href="/artikler"
           >Gå på opdagelse
           <CaretDown width="16" height="16" />
         </a>
       </li>
-      <li>
+      <li class="nav-centre-link">
         <a class="flex" href="#"
           >Danmarks bedste
           <CaretDown width="16" height="16" />
         </a>
       </li>
-      <li>
+      <li class="nav-centre-link">
         <a class="flex" href="/company"
           >Planlæg din tur
           <CaretDown width="16" height="16" />
         </a>
       </li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="#">Om os</a></li>
+      <li class="nav-centre-link">
+        <a href="/shop">Shop</a>
+      </li>
+      <li class="nav-centre-link"><a href="#">Om os</a></li>
       <button class="nav-mobile-btn flex">
         <MagnifyingGlass width="16" height="16" />
       </button>
@@ -59,21 +61,24 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
 <style>
   header {
     width: min(95vw, 1200px);
-    padding: 0.75rem 0;
+    padding: 1rem 0;
     position: fixed;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 9999;
   }
 
   nav {
-    background: var(--primary-400-t3);
-    backdrop-filter: blur(100px);
+    box-shadow: var(--shadow-general);
+    background: var(--primary-100-t1);
     position: relative;
     padding: 0.375rem 0.75rem;
     justify-content: space-between;
     align-items: center;
     border: 1px solid var(--primary-500-t2);
     border-radius: var(--round-pill);
+    backdrop-filter: blur(4px);
   }
 
   .nav-logo {
@@ -88,6 +93,10 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
   }
 
   @media screen and (min-width: 1200px) {
+    header {
+      padding: 1.5rem 0;
+    }
+
     .nav-desktop {
       display: flex;
       padding: 0;
@@ -98,6 +107,14 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
       gap: 0.5rem;
       align-items: center;
 
+      .nav-centre-link {
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+
       a {
         text-decoration: none;
         align-items: center;
@@ -107,7 +124,6 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
         border: 1px solid hsla(0, 0%, 100%, 0);
         font-size: 0.875rem;
         font-weight: 500;
-        transition: all 150ms ease-in-out;
         &:hover {
           border: 1px solid var(--greyscale-100);
           background: var(--greyscale-100-t2);
@@ -130,8 +146,9 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
 
     .nav-mobile-btn {
       cursor: pointer;
-      transition: all 150ms ease-in-out;
+      transition: all 200ms ease-in-out;
       &:hover {
+        transform: scale(1.1);
         border-color: var(--greyscale-100);
         background: var(--greyscale-100-t2);
         svg {

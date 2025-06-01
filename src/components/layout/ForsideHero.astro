@@ -1,0 +1,236 @@
+---
+import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
+const responseHero = await fetch(
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-hero",
+);
+
+const dataHero = await responseHero.json();
+const homeHero = dataHero.data;
+---
+
+<article class="hero-wrapper">
+  <section class="hero-section flex">
+    <img class="hero-section-image" src="/hero-section.jpg" alt="" />
+    <div class="hero-section-overlay"></div>
+    <div class="hero-section-content">
+      <h1>{homeHero.title}</h1>
+      <h2>{homeHero.subtitle}</h2>
+      <p>{homeHero.content}</p>
+    </div>
+    <div class="hero-section-search flex">
+      <h3>Find din næste oplevelse</h3>
+      <search>
+        <form class="flex" action="">
+          <input placeholder="oplevelser, teater, museum" />
+          <button class="flex"
+            ><MagnifyingGlass width="16" height="16" />Søg</button
+          >
+        </form>
+      </search>
+    </div>
+  </section>
+</article>
+
+<style>
+  .hero-wrapper {
+    width: min(98vw, 1600px);
+    margin-left: calc(50% - min(49vw, 800px));
+    margin-top: -155px;
+    margin-bottom: -6rem;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding: 0 0 1rem 0;
+    font-weight: 300;
+    letter-spacing: 0.03rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.09rem;
+  }
+
+  p {
+    width: 30ch;
+    font-size: 1rem;
+    letter-spacing: normal;
+    line-height: 115%;
+  }
+
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0 1rem;
+    border: 1px solid var(--primary-500);
+    justify-content: center;
+    gap: 3rem;
+    background: var(--primary-400);
+    height: 95vh;
+    flex-direction: column;
+    border-radius: var(--round-25);
+    color: var(--greyscale-100);
+  }
+
+  .hero-section-image {
+    top: 0;
+    left: -100%;
+    width: auto;
+  }
+
+  .hero-section-image,
+  .hero-section-overlay {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-section-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(2px);
+    background: var(--utility-gradient-blue-right);
+    z-index: 1;
+  }
+
+  .hero-section-content,
+  .hero-section-search {
+    z-index: 2;
+  }
+
+  .hero-section-search {
+    flex-direction: column;
+    gap: 0.25rem;
+
+    form {
+      width: min(100%, 52ch);
+      color: var(--greyscale-100);
+      border: 1px solid var(--greyscale-100);
+      background: var(--greyscale-100-t3);
+      border-radius: var(--round-pill);
+      backdrop-filter: blur(3px);
+
+      input {
+        border-radius: var(--round-pill) 0 0 var(--round-pill);
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        background: none;
+        border: none;
+        &::placeholder {
+          color: var(--greyscale-100-t1);
+        }
+      }
+
+      button {
+        cursor: pointer;
+        align-items: center;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+        margin: 0.25rem 0.25rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--round-pill);
+        border: 1px solid var(--secondary-200);
+        background: var(--secondary-500);
+        text-transform: uppercase;
+        color: var(--secondary-200);
+        transition: all 150ms ease-in-out;
+        &:hover {
+          transform: scale(0.95);
+          color: var(--accent-100);
+          background: var(--accent-500);
+          border: 1px solid var(--accent-100);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .hero-section-image {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    main {
+      width: min(90vw, 1200px);
+    }
+
+    h1 {
+      font-size: 5rem;
+      letter-spacing: normal;
+      margin: 0 0 -0.5rem 0;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 0.875rem;
+    }
+
+    p {
+      width: 52ch;
+      font-size: 1rem;
+      letter-spacing: normal;
+      line-height: 115%;
+    }
+
+    .hero-section-image {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .hero-wrapper {
+      margin-top: -150px;
+    }
+
+    .hero-section {
+      border-radius: var(--round-50);
+      padding: 0 3rem;
+      gap: 7rem;
+    }
+
+    .hero-section-search {
+      form {
+        width: 52ch;
+
+        input {
+          border-radius: var(--round-pill) 0 0 var(--round-pill);
+          padding: 0.5rem 0.75rem;
+          background: none;
+          border: none;
+          &::placeholder {
+            color: var(--greyscale-100-t1);
+          }
+        }
+
+        button {
+          align-items: center;
+          font-size: 0.75rem;
+          gap: 0.25rem;
+          margin: 0.25rem 0.25rem;
+          padding: 0.25rem 0.5rem;
+          border-radius: var(--round-pill);
+          border: 1px solid var(--secondary-200);
+          background: var(--secondary-500);
+          text-transform: uppercase;
+          color: var(--secondary-200);
+        }
+      }
+    }
+  }
+</style>

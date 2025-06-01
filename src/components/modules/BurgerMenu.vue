@@ -11,40 +11,42 @@ const toggle = () => {
 </script>
 
 <template>
-  <button @click="toggle" class="nav-mobile-btn flex">
-    <PhList :size="16" />
-  </button>
+  <div class="nav-mobile-container">
+    <button @click="toggle" class="nav-mobile-btn flex">
+      <PhList :size="16" />
+    </button>
 
-  <div class="nav-mobile" v-if="menuOpen" aria-label="mobile menu">
-    <ul class="nav-mobile-menu-list flex">
-      <li class="nav-mobile-point flex"><a href="/artikler">Gå på opdagelse</a>
-        <PhCaretDown :size="16" />
-      </li>
-      <li class="nav-mobile-point flex"><a href="#">Danmarks bedste</a>
-        <PhCaretDown :size="16" />
-      </li>
-      <li class="nav-mobile-point flex"><a href="/company">Planlæg din tur</a>
-        <PhCaretDown :size="16" />
-      </li>
-      <li class="nav-mobile-point flex"><a href="/shop">Shop</a></li>
-      <li class="nav-mobile-point flex"><a href="#">Om os</a></li>
-      <div class="nav-mobile-search flex">
-        <button class="nav-mobile-btn">
-          <PhMagnifyingGlass :size="16" />
-        </button>
-      </div>
-    </ul>
+    <div class="nav-mobile" v-if="menuOpen" aria-label="mobile menu">
+      <ul class="nav-mobile-menu-list flex">
+        <li class="nav-mobile-point flex"><a href="/artikler">Gå på opdagelse</a>
+          <PhCaretDown :size="16" />
+        </li>
+        <li class="nav-mobile-point flex"><a href="#">Danmarks bedste</a>
+          <PhCaretDown :size="16" />
+        </li>
+        <li class="nav-mobile-point flex"><a href="/company">Planlæg din tur</a>
+          <PhCaretDown :size="16" />
+        </li>
+        <li class="nav-mobile-point flex"><a href="/shop">Shop</a></li>
+        <li class="nav-mobile-point flex"><a href="#">Om os</a></li>
+        <div class="nav-mobile-search flex">
+          <button class="nav-mobile-btn">
+            <PhMagnifyingGlass :size="16" />
+          </button>
+        </div>
+      </ul>
 
-    <div class="nav-mobile-button-list flex">
-      <!-- download app button-->
-      <ButtonFunction />
-      <div class="nav-mobile-users flex">
-        <a class="nav-mobile-btn flex" href="#">
-          <PhUser :size="16" weight="fill" />
-        </a>
-        <a class="nav-mobile-btn flex" href="#">
-          <PhBasket :size="16" weight="fill" />
-        </a>
+      <div class="nav-mobile-button-list flex">
+        <!-- download app button-->
+        <ButtonFunction />
+        <div class="nav-mobile-users flex">
+          <a class="nav-mobile-btn flex" href="#">
+            <PhUser :size="16" weight="fill" />
+          </a>
+          <a class="nav-mobile-btn flex" href="#">
+            <PhBasket :size="16" weight="fill" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -65,7 +67,9 @@ svg {
 
   border: 1px solid var(--primary-500-t2);
   border-radius: var(--round-25);
-  background: var(--greyscale-100);
+  background: var(--primary-100);
+  box-shadow: var(--shadow-general);
+  transition: all 200ms ease-in-out;
 
   padding: .5rem;
 
@@ -118,6 +122,7 @@ svg {
 
 @media screen and (min-width: 1200px) {
 
+  .nav-mobile-container,
   .nav-mobile,
   .nav-mobile-btn {
     display: none;

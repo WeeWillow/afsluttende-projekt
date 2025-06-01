@@ -6,66 +6,23 @@ import Map from "../components/layout/Map.astro";
 import FocusEntryPoint from "../components/elements/CardFocusEntryPoint.astro";
 import Article from "../components/elements/CardArticle.astro";
 import GuideToDenmark from "../components/layout/GuideToDenmark.astro";
-import KlubDanmark from "../components/layout/KlubDanmark.astro";
+import ForsideHero from "../components/layout/ForsideHero.astro";
+import AboutUs from "../components/layout/AboutUs.astro";
 
-const responseHero = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-hero",
-);
-const responseAbout = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
-);
 
-const dataHero = await responseHero.json();
-const dataAbout = await responseAbout.json();
-
-const homeHero = dataHero.data;
-const homeAbout = dataAbout.data;
 
 // import { PhEnvelope } from "@phosphor-icons/vue";
 // import Envelope from "phosphor-astro/Envelope.astro";
 ---
 
 <Layout title="OpdagDanmark">
-  <section class="hero">
-    <article>
-      <div>
-        <h1>{homeHero.title}</h1>
-        <h2>{homeHero.subtitle}</h2>
-        <p>
-          {homeHero.content}
-        </p>
-      </div>
-
-      <div>
-        <h3>oplevelse</h3>
-        <search>
-          <form action="">
-            <input placeholder="oplevelser, teater, museum" />
-            <button>Søg</button>
-          </form>
-        </search>
-      </div>
-    </article>
-  </section>
+  <ForsideHero />
 
   <section>
     <FocusEntryPoint />
   </section>
 
-  <section class="aboutUs">
-    <img src="" alt="" />
-    <article>
-      <p>{homeAbout.type}</p>
-      <h2>{homeAbout.title}</h2>
-      <h3>{homeAbout.subtitle}</h3>
-      <p>{homeAbout.content}</p>
-      <a href="#">{homeAbout.cta}</a>
-
-      <p>{homeAbout.greeting}</p>
-      <h3>{homeAbout.signature}</h3>
-      <h3>{homeAbout.role}</h3>
-    </article>
-  </section>
+  <AboutUs />
 
   <GuideToDenmark />
 

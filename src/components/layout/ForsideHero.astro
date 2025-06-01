@@ -1,0 +1,35 @@
+---
+const responseHero = await fetch(
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-hero",
+);
+
+const dataHero = await responseHero.json();
+const homeHero = dataHero.data;
+---
+<section class="hero-section">
+    <article>
+      <div>
+        <h1>{homeHero.title}</h1>
+        <h2>{homeHero.subtitle}</h2>
+        <p>
+          {homeHero.content}
+        </p>
+      </div>
+
+      <div>
+        <h3>oplevelse</h3>
+        <search>
+          <form action="">
+            <input placeholder="oplevelser, teater, museum" />
+            <button>Søg</button>
+          </form>
+        </search>
+      </div>
+    </article>
+  </section>
+
+<style>
+  .hero-section {
+    background: red;
+  }
+</style>

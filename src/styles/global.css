@@ -47,6 +47,8 @@
   --primary-400-t2: hsl(207, 43%, 84%, 60%);
   --primary-400-t3: hsl(207, 43%, 84%, 30%);
   --primary-400-t4: hsl(207, 43%, 84%, 15%);
+  --primary-100: hsl(206, 47%, 97%);
+  --primary-100-t1: hsla(206, 47%, 94%, 90%);
 
   --secondary-500: hsl(36, 90%, 44%);
   --secondary-500-t1: hsla(36, 90%, 44%, 80%);
@@ -115,6 +117,9 @@
   --text-300: 300;
   --text-200: 200;
   --text-100: 100;
+
+  /* dropshadow */
+  --shadow-general:rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   /* Astro Breadcrumb */
   --color-link-breadcrumbs: var(--greyscale-900);

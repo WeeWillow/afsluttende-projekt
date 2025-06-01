@@ -87,6 +87,7 @@
   --greyscale-500: hsl(226, 11%, 38%);
   --greyscale-200: hsl(228, 11%, 73%);
   --greyscale-100: hsl(218, 100%, 99%);
+  --greyscale-100-t1: hsl(42, 100%, 98%, 70%);
   --greyscale-100-t2: hsl(42, 100%, 98%, 50%);
   --greyscale-100-t3: hsl(42, 100%, 98%, 25%);
 

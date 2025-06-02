@@ -1,5 +1,5 @@
 <script setup>
-import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/vue";
+import { PhNewspaper, PhUsers, PhUsersFour, PhMountains, PhForkKnife, PhMaskHappy, PhTicket, PhSoccerBall, PhPanorama, PhThumbsUp, PhAndroidLogo, PhMapPin, PhChefHat } from "@phosphor-icons/vue";
 </script>
 
 <template>
@@ -52,7 +52,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </div>
 
       <a href="#" class="gpo-section-point flex">
-        <PhNewspaper :size="32" />
+        <PhForkKnife :size="32" />
         <div class="gpo-section-point-content">
           <h3>Mad og drikke</h3>
           <p>Smagninger, festivaler og kulinariske events</p>
@@ -60,7 +60,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhUsers :size="32" />
+        <PhMaskHappy :size="32" />
         <div class="gpo-section-point-content">
           <h3>Teater og musik</h3>
           <p>Koncerter, forestillinger og scenekunst</p>
@@ -68,7 +68,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhUsersFour :size="32" />
+        <PhTicket :size="32" />
         <div class="gpo-section-point-content">
           <h3>Workshops og aktiviteter</h3>
           <p>Prøv kræfter med nye ting</p>
@@ -76,7 +76,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhMountains :size="32" />
+        <PhSoccerBall :size="32" />
         <div class="gpo-section-point-content">
           <h3>Sport</h3>
           <p>Events med bevægelse og fællesskab</p>
@@ -84,7 +84,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhMountains :size="32" />
+        <PhPanorama :size="32" />
         <div class="gpo-section-point-content">
           <h3>Udstillinger</h3>
           <p>Kunst, kultur og visuelle oplevelser</p>
@@ -100,7 +100,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </div>
 
       <a href="#" class="gpo-section-point flex">
-        <PhNewspaper :size="32" />
+        <PhThumbsUp :size="32" />
         <div class="gpo-section-point-content">
           <h3>Vores favoritter</h3>
           <p>Anbefalede steder og profiler</p>
@@ -108,7 +108,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhUsers :size="32" />
+        <PhAndroidLogo :size="32" />
         <div class="gpo-section-point-content">
           <h3>Dambo Troldene</h3>
           <p>Find de skjulte kæmper i naturen</p>
@@ -116,7 +116,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhUsersFour :size="32" />
+        <PhMapPin :size="32" />
         <div class="gpo-section-point-content">
           <h3>Dansk verdensarv</h3>
           <p>Unikke steder på UNESCO-listen</p>
@@ -124,7 +124,7 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
       </a>
 
       <a href="#" class="gpo-section-point flex">
-        <PhMountains :size="32" />
+        <PhChefHat :size="32" />
         <div class="gpo-section-point-content">
           <h3>Michelin restauranter</h3>
           <p>Oplev mad i verdensklasse</p>
@@ -136,8 +136,9 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
 
 <style scoped>
 .gpo-section {
+  width: 100%;
   overflow: scroll;
-  gap: 1rem;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -149,10 +150,10 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
 
 .gpo-section-head {
   height: 9ch;
-  width: 35ch;
+  width: 30ch;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
   h2 {
     width: fit-content;
@@ -168,22 +169,24 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
 }
 
 .gpo-section-point {
-  justify-content: space-evenly;
-  height: 8ch;
-  width: min(28ch, fit-content);
+  height: 7ch;
+  width: min(22ch, fit-content);
   text-decoration: none;
   background: var(--greyscale-100-t3);
   border-radius: var(--round-min);
   border: 1px solid var(--greyscale-100);
   align-items: center;
   transition: transform 150ms ease-in-out;
+  padding: .25rem 1rem;
+  gap: 1rem;
 
   svg {
     color: var(--secondary-500-t1);
   }
 
   &:hover {
-    transform: scale(0.95);
+    transform: scale(0.96);
+    background: var(--greyscale-100-t2);
   }
 }
 
@@ -191,15 +194,15 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains } from "@phosphor-icons/
   h3 {
     color: var(--primary-600);
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   p {
-    width: 25ch;
+    width: 22ch;
     color: var(--primary-600);
     margin-top: -0.25rem;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     font-style: italic;
   }
 }

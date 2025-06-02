@@ -19,7 +19,7 @@ defineProps({
 
 <style scoped>
 .etb-section-link {
-  width: 25ch;
+  width: 32ch;
   text-decoration: none;
   border-radius: var(--round-min);
   transition: all 200ms ease-in-out;
@@ -35,7 +35,7 @@ defineProps({
 }
 
 .etb-section {
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1.5rem;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--secondary-500);

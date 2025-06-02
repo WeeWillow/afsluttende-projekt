@@ -4,7 +4,6 @@ import { PhList, PhCaretDown, PhMagnifyingGlass, PhDownloadSimple, PhUser, PhBas
 import ButtonFunction from '../modules/ButtonFunction.vue';
 
 const menuOpen = ref(false);
-// const menuOpen = ref(true);
 const toggle = () => {
   menuOpen.value = !menuOpen.value
 }

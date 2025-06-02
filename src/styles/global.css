@@ -5,6 +5,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .flex-centre {
@@ -53,6 +54,7 @@
   --secondary-500: hsl(36, 90%, 44%);
   --secondary-500-t1: hsla(36, 90%, 44%, 80%);
   --secondary-400: hsl(40, 68%, 54%);
+  --secondary-400-t1: hsl(40, 68%, 54%, 70%);
   --secondary-400-t3: hsl(40, 68%, 54%, 30%);
   --secondary-300: hsl(40, 68%, 70%);
   --secondary-200: hsl(43, 96%, 90%);
@@ -65,21 +67,9 @@
   --utility-500: hsl(104, 35%, 43%);
   --utility-400: hsl(99, 51%, 68%);
   --utility-300: hsl(95, 40%, 94%);
-  --utility-gradient-blue-right: linear-gradient(
-    to right,
-    hsla(226, 18%, 14%, 75%),
-    hsla(207, 73%, 20%, 8%)
-  );
-  --utility-gradient-blue-top: linear-gradient(
-    to top,
-    hsla(226, 18%, 14%, 75%),
-    hsla(207, 73%, 20%, 8%)
-  );
-  --utility-gradient-blue-left: linear-gradient(
-    to left,
-    hsla(226, 18%, 14%, 75%),
-    hsla(207, 73%, 20%, 8%)
-  );
+  --utility-gradient-blue-right: linear-gradient(to right, hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
+  --utility-gradient-blue-top: linear-gradient(to top, hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
+  --utility-gradient-blue-left: linear-gradient(to left, hsla(226, 18%, 14%, 75%), hsla(207, 73%, 20%, 8%));
 
   --greyscale-900: hsl(226, 18%, 14%);
   --greyscale-700: hsl(225, 14%, 28%);
@@ -120,7 +110,7 @@
   --text-100: 100;
 
   /* dropshadow */
-  --shadow-general:rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --shadow-general: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   /* Astro Breadcrumb */
   --color-link-breadcrumbs: var(--greyscale-900);
@@ -167,6 +157,7 @@ h6 {
 }
 
 p,
-a {
+a,
+.nav-link {
   font-family: "Krub", sans-serif;
 }

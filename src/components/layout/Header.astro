@@ -1,14 +1,19 @@
 ---
-import BurgerMenu from "../modules/BurgerMenu.vue";
+import BurgerMenu from "../navigation/BurgerMenu.vue";
 import ButtonFunction from "../modules/ButtonFunction.vue";
 
 import User from "phosphor-astro/User.astro";
 import Basket from "phosphor-astro/Basket.astro";
 import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
-import CaretDown from "phosphor-astro/CaretDown.astro";
+import DropdownPoint from "../navigation/DropdownPoint.vue";
+import MegaMenu from "../navigation/MegaMenu.vue";
+import GaaPaaOpdagelse from "../navigation/GaaPaaOpdagelse.vue";
+import DanmarksBedste from "../navigation/DanmarksBedste.vue";
+import PlanlaegDinTur from "../navigation/PlanlaegDinTur.vue";
+import EntryPointBlock from "../navigation/EntryPointBlock.vue";
 ---
 
-<header>
+<header class="flex">
   <nav class="flex">
     <a class="nav-logo nav-left" href="/"
       ><img class="nav-logo-img flex" src="/opdagDanmarkLogo.png" alt="" /></a
@@ -17,27 +22,30 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
     <!-- desktop nav -->
     <ul class="nav-centre nav-desktop">
       <li class="nav-centre-link">
-        <a class="flex" href="/artikler"
-          >Gå på opdagelse
-          <CaretDown width="16" height="16" />
-        </a>
+        <DropdownPoint
+          client:load
+          label="Gå på opdagelse"
+          slotName="GaaPaaOpdagelse"
+        />
       </li>
       <li class="nav-centre-link">
-        <a class="flex" href="#"
-          >Danmarks bedste
-          <CaretDown width="16" height="16" />
-        </a>
+        <DropdownPoint
+          client:load
+          label="Danmarks bedste"
+          slotName="DanmarksBedste"
+        />
       </li>
       <li class="nav-centre-link">
-        <a class="flex" href="/company"
-          >Planlæg din tur
-          <CaretDown width="16" height="16" />
-        </a>
+        <DropdownPoint
+          client:load
+          label="Planlæg din tur"
+          slotName="PlanlaegDinTur"
+        />
       </li>
       <li class="nav-centre-link">
-        <a href="/shop">Shop</a>
+        <a class="nav-link" href="/shop">Shop</a>
       </li>
-      <li class="nav-centre-link"><a href="#">Om os</a></li>
+      <li class="nav-centre-link"><a class="nav-link" href="#">Om os</a></li>
       <button class="nav-mobile-btn flex">
         <MagnifyingGlass width="16" height="16" />
       </button>
@@ -56,6 +64,10 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
     <!-- mobile menu -->
     <BurgerMenu client:load />
   </nav>
+  <!-- <MegaMenu client:load /> -->
+  <MegaMenu>
+    <GaaPaaOpdagelse/>
+  </MegaMenu>
 </header>
 
 <style>
@@ -67,6 +79,8 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   nav {
@@ -115,7 +129,8 @@ import CaretDown from "phosphor-astro/CaretDown.astro";
         }
       }
 
-      a {
+      .nav-link {
+        cursor: pointer;
         text-decoration: none;
         align-items: center;
         padding: 0.25rem 0.6rem;

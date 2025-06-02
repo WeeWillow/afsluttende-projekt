@@ -19,8 +19,7 @@ const slots = {
 
 <template>
   <section class="mega-menu" v-if="isOpen" @mouseenter="cancelHide" @mouseleave="hide">
-    <!-- <component :is="slots[activeSlot]" /> -->
-    <slot />
+    <component :is="slots[activeSlot]" />
     <div class="cta-list flex">
       <EntryPointBlock heading="Nyhedsbrev" imgSrc="/cta-nyhedsbrev.png" client:load />
       <EntryPointBlock heading="KlubDanmark" imgSrc="/cta-klubdanmark.png" client:load />
@@ -38,13 +37,13 @@ const slots = {
   .mega-menu {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--primary-100-t1);
     backdrop-filter: blur(8px);
     border-radius: var(--round-25);
     border: 1px solid var(--primary-500-t2);
-    max-height: 70vh;
-    gap: 1rem;
+    max-height: 75vh;
+    gap: 2rem;
     flex: 1;
   }
 

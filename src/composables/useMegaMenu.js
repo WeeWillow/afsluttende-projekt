@@ -1,7 +1,6 @@
 import { ref } from "vue";
 
-// const isOpen = ref(false);
-const isOpen = ref(true);
+const isOpen = ref(false);
 const activeSlot = ref(null);
 let hoverTimeout = null;
 

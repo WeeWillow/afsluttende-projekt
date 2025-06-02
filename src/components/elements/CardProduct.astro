@@ -5,13 +5,98 @@ const slug = product.title.toLowerCase();
 const imageUrl = product.images[0].formats.small.url;
 const brand = product.brands;
 const price = product.price;
+const tag = product.categories[0].name;
+
+let tagColor = "";
+let tagBgColor = "";
+
+if (tag === "Restaurantoplevelse") {
+  tagColor = "var(--secondary-500)";
+  tagBgColor = "var(--secondary-200)";
+} else if (tag === "Vandrerute") {
+  tagColor = "var(--utility-500)";
+  tagBgColor = "var(--utility-300)";
+} else if (tag === "Ophold") {
+  tagColor = "var(--accent-500)";
+  tagBgColor = "var(--accent-100)";
+} else if (tag === "Nordjylland" || tag === "Midtjylland") {
+  tagColor = "var(--primary-600)";
+  tagBgColor = "var(--primary-100)";
+}
 ---
 
 <article class="product-card">
   <a href={`/produkter/${slug}`}>
+    <div
+      style={{
+        backgroundColor: tagBgColor,
+        border: `2px solid ${tagColor}`,
+        padding: "3px 7px",
+        borderRadius: "50px",
+      }}
+    >
+      <p
+        style={{
+          color: tagColor,
+        }}
+      >
+        {tag}
+      </p>
+    </div>
     <img src={imageUrl} alt={title} />
-    <p>{brand}</p>
+    <p class="product-brand">{brand}</p>
     <h3>{title}</h3>
     <p>{price} kr.</p>
   </a>
 </article>
+
+<style>
+  p,
+  h3 {
+    color: var(--primary-700);
+  }
+
+  .product-card {
+    position: relative;
+    margin-bottom: 20px;
+    img {
+      border-radius: var(--round-min);
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-size: var(--font-size-600);
+      margin-block: 5px;
+    }
+
+    div {
+      position: absolute;
+      top: 210px;
+      left: 10px;
+      font-size: var(--font-size-400);
+    }
+  }
+
+  .product-brand {
+    color: var(--primary-500);
+    text-transform: uppercase;
+    font-size: var(--font-size-400);
+  }
+
+  @media screen and (min-width: 700px) {
+    .product-card {
+      max-width: 270px;
+
+      img {
+        height: 250px;
+      }
+    }
+  }
+</style>

@@ -1,8 +1,9 @@
 ---
 const { title, date, image } = Astro.props;
+import ButtonFunction from "../../components/modules/ButtonFunction.vue";
 ---
 
-<a href="#" class="events-card-link">
+<div class="events-card-link">
   <article class="events-card-article">
     <div class="events-img-container">
       <img src={image} alt={title} />
@@ -10,16 +11,21 @@ const { title, date, image } = Astro.props;
     <div class="events-card-content">
       <p>{date}</p>
       <h3>{title}</h3>
+      <button>Læs mere</button>
+      <div class="events-card-btn"></div>
     </div>
   </article>
-</a>
+</div>
 
 <style>
+  .events-card-btn .event-btn {
+    width: 100%;
+  }
   .events-card-link {
     text-decoration: none;
     width: 100%;
     border: 1px solid var(--primary-700);
-    border-radius: var(--round-general);
+    border-radius: var(--round-min);
     overflow: hidden;
     transition: transform 0.2s ease;
     display: block;
@@ -35,7 +41,7 @@ const { title, date, image } = Astro.props;
     flex-direction: column;
     height: 100%;
     background-color: var(--primary-400-t2);
-    border-radius: var(--round-general);
+    border-radius: var(--round-min);
   }
 
   .events-img-container {
@@ -45,18 +51,18 @@ const { title, date, image } = Astro.props;
       height: 150px;
       object-fit: cover;
       display: block;
-      border-radius: var(--round-general);
+      border-radius: var(--round-min);
       margin-bottom: -5px;
     }
   }
 
   .events-card-content {
-    max-height: 200px;
+    max-height: 150px;
     background-color: var(--primary-700);
     color: white;
     padding: 0.5rem;
     text-align: left;
-    border-radius: var(--round-general);
+    border-radius: var(--round-min);
     margin: 5px;
     height: 100%;
 
@@ -70,6 +76,7 @@ const { title, date, image } = Astro.props;
       font-size: var(--font-size-600);
       font-weight: var(--text-700);
       margin-bottom: 30px;
+      line-height: 30px;
     }
   }
 

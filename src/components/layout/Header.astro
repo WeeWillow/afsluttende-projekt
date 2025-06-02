@@ -10,7 +10,6 @@ import MegaMenu from "../navigation/MegaMenu.vue";
 import GaaPaaOpdagelse from "../navigation/GaaPaaOpdagelse.vue";
 import DanmarksBedste from "../navigation/DanmarksBedste.vue";
 import PlanlaegDinTur from "../navigation/PlanlaegDinTur.vue";
-import EntryPointBlock from "../navigation/EntryPointBlock.vue";
 ---
 
 <header class="flex">
@@ -64,10 +63,7 @@ import EntryPointBlock from "../navigation/EntryPointBlock.vue";
     <!-- mobile menu -->
     <BurgerMenu client:load />
   </nav>
-  <!-- <MegaMenu client:load /> -->
-  <MegaMenu>
-    <GaaPaaOpdagelse/>
-  </MegaMenu>
+  <MegaMenu client:load />
 </header>
 
 <style>

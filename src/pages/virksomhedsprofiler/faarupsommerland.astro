@@ -7,6 +7,13 @@ import Breadcrumb from "../../components/modules/Breadcrumb.astro";
 import EventCard from "../../components/elements/CardEvents.astro";
 import AttractionCard from "../../components/elements/CardAttraction.astro";
 
+const customFaarup = [
+  {
+    index: 0,
+    text: "Fårup Sommerland",
+  },
+];
+
 const events = [
   {
     image: "/faarupImg/moterMille.webp",
@@ -75,7 +82,7 @@ const forlystelser = [
 ---
 
 <Layout title="Fårup Sommerland">
-  <Breadcrumb />
+  <Breadcrumb customizeLinks={customFaarup} />
 
   <section class="map-section flex">
     <img class="map-section-image" src="/faarupImg/hero.webp" alt="" />
@@ -90,7 +97,7 @@ const forlystelser = [
         iconType="external"
         variant="outline"
       />
-      <ButtonFunction />
+      <ButtonFunction label="Køb billet" iconType="external" />
     </div>
   </section>
 

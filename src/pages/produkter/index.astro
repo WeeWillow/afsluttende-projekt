@@ -1,8 +1,10 @@
 ---
+import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
-// import GuideToDenmark from "../../components/GuideToDenmark.astro";
-// import RecommendedPlaces from "../../components/RecommendedPlaces.astro";
 import ProductCard from "../../components/elements/CardProduct.astro";
+
+import Breadcrumb from "../../components/modules/Breadcrumb.astro";
+import Filter from "../../components/modules/Filter.vue";
 
 const response = await fetch(
   "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*"
@@ -12,20 +14,113 @@ const products = data.data;
 ---
 
 <Layout title="Shop">
-  <section>
+  <Breadcrumb />
+  <section class="products-hero-img">
     <h1>Shop</h1>
   </section>
 
-  <section>
+  <section class="products-section">
     <article>
       <h2>Alle produkter</h2>
-      <!-- Indsæt filtrering komponent her -->
+      <Filter />
     </article>
     <article>
-      {products.map((product: any) => <ProductCard product={product} />)}
+      <div class="products-sorting flex">
+        <form action="/action_page.php">
+          <label for="cars">Sortere efter:</label>
+          <select>
+            <option value="newest">Nyeste</option>
+          </select>
+        </form>
+
+        <div>
+          <p>8 produkter</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        {products.map((product: any) => <ProductCard product={product} />)}
+      </div>
     </article>
   </section>
   <!-- Indsæt Flere produkter komponent her -->
   <!-- <RecommendedPlaces />
   <GuideToDenmark /> -->
 </Layout>
+
+<style>
+  h2,
+  h3,
+  p,
+  form,
+  select {
+    color: var(--primary-700);
+  }
+  form,
+  select {
+    font-family: "Krub", sans-serif;
+  }
+
+  form select {
+    padding: 2px;
+    padding-right: 20px;
+    border-radius: var(--round-min);
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-700);
+    margin-left: 10px;
+  }
+
+  .products-sorting {
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: var(--font-size-700);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .products-section {
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .products-hero-img {
+    background-image: url("/shopHero.jpg");
+    background-position: center;
+    height: 250px;
+    width: 100%;
+    border-radius: var(--round-general);
+    color: white;
+
+    h1 {
+      margin: 10px 20px;
+    }
+  }
+
+  /* ------MEDIA QUERIES------ */
+  @media screen and (min-width: 700px) {
+    .products-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 const responseAbout = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-about"
 );
 
 const dataAbout = await responseAbout.json();
@@ -9,17 +9,20 @@ const homeAbout = dataAbout.data;
 ---
 
 <section class="aboutUs-section flex">
-  <img src="/hestehaveSkov.jpg" alt="" />
+  <img src="/opdagDanmarkInfo.png" alt="" />
   <article>
     <h4>{homeAbout.type}</h4>
     <h2>{homeAbout.title}</h2>
-    <h3>{homeAbout.subtitle}</h3>
+    <h3 class="subtitle">{homeAbout.subtitle}</h3>
     <p>{homeAbout.content}</p>
     <a href="#">{homeAbout.cta}</a>
 
     <p>{homeAbout.greeting}</p>
-    <h3>{homeAbout.signature}</h3>
-    <h3>{homeAbout.role}</h3>
+    <div class="flex signature">
+      <h3>{homeAbout.signature}</h3>
+      <p class="line">|</p>
+      <h3 class="role">{homeAbout.role}</h3>
+    </div>
   </article>
 </section>
 
@@ -28,17 +31,49 @@ const homeAbout = dataAbout.data;
     flex-direction: column;
     gap: 1.5rem;
 
-    img { 
+    color: var(--primary-700);
+
+    img {
       border-radius: var(--round-min);
+      width: 100%;
+      height: 500px;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+    }
+
+    .subtitle {
+      font-weight: 300;
+      font-size: 1.4rem;
+      line-height: 25px;
+      margin-block: 10px;
+    }
+
+    h4 {
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: var(--font-size-400);
+    }
+
+    a {
+      color: var(--primary-700);
+      font-size: var(--font-size-400);
+    }
+
+    /* .role {
+      margin-left: 7px;
+    } */
+
+    .line {
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 700px) {
     .aboutUs-section {
+      flex-direction: row;
     }
   }
 </style>

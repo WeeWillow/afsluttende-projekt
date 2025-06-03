@@ -1,11 +1,111 @@
 ---
-
+const { heading = "", subheading = "", src = "", href = "#" } = Astro.props;
 ---
 
-<article>
-  <a href="">
-    <img src="" alt="" />
-    <h2></h2>
-    <p></p>
-  </a>
-</article>
+<a href={href} class="article-card-link">
+  <article class="article-card flex">
+    <img class="article-card-image" src={src} alt="" />
+    <div class="article-card-overlay"></div>
+    <div class="article-card-content">
+      <h2>{heading}</h2>
+      <h3>{subheading}</h3>
+    </div>
+  </article>
+</a>
+
+<style>
+  .article-card-link {
+    text-decoration: none;
+    border-radius: var(--round-min);
+    outline: 1px solid var(--greyscale-100);
+    transition: all 200ms ease-in-out;
+    &:hover {
+      outline: 1px solid var(--secondary-500);
+      outline-offset: 0.5rem;
+      transform: scale(0.99);
+      box-shadow: rgba(31, 30, 61, 0.13) 0px 2px 8px 0px;
+    }
+  }
+
+  .article-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--round-general);
+    border: 1px solid var(--secondary-500);
+    height: 10rem;
+    background: var(--primary-400);
+    color: var(--greyscale-100);
+
+    align-items: end;
+    padding: 1.5rem 1rem;
+
+    h2 {
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+  }
+
+  .article-card-image,
+  .article-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .article-card-overlay {
+    backdrop-filter: blur(1px);
+    background: var(--utility-gradient-blue-top);
+    z-index: 1;
+  }
+
+  .article-card-buttons,
+  .article-card-content {
+    z-index: 2;
+  }
+
+  .article-card-content {
+    width: auto;
+    h3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1rem;
+      padding: 0.25rem 0 0;
+      font-weight: 400;
+      line-height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .article-card {
+      height: 20rem;
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .article-card-content {
+        width: 32ch;
+        h3 {
+          width: 30ch;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 1rem;
+          padding: 0.25rem 0 0;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+    }
+  }
+</style>

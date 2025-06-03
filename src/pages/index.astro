@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-
 import Map from "../components/layout/Map.astro";
 import FocusEntryPoint from "../components/elements/CardFocusEntryPoint.astro";
 import Article from "../components/elements/CardArticle.astro";
@@ -10,6 +9,8 @@ import ForsideHero from "../components/layout/ForsideHero.astro";
 import AboutUs from "../components/layout/AboutUs.astro";
 import PopularInShop from "../components/layout/PopularInShop.astro";
 import SelectedArticles from "../components/layout/SelectedArticles.astro";
+import DanmarksBedsteSection from "../components/layout/DanmarksBedsteSection.astro";
+import RecommendedPlaces from "../components/layout/RecommendedPlaces.astro";
 
 // import { PhEnvelope } from "@phosphor-icons/vue";
 // import Envelope from "phosphor-astro/Envelope.astro";
@@ -17,49 +18,17 @@ import SelectedArticles from "../components/layout/SelectedArticles.astro";
 
 <Layout title="OpdagDanmark">
   <ForsideHero />
-
+  
   <section>
     <FocusEntryPoint />
   </section>
-
+  
   <AboutUs />
+  <RecommendedPlaces />
 
   <GuideToDenmark />
-
-  <section class="danmarksBedste">
-    <h2>Danmarks Bedste</h2>
-    <a href="#">Se alle afstemninger</a>
-    <p>
-      Vi hylder Danmarks flittige aktører. Vær med i kåringen af Danmarks
-      Bedste. Når du stemmer, deltager du samtidig i en konkurrence om en
-      præmie. Se de aktuelle afstemninger herunder og vær med til at løfte dine
-      favoritter frem.
-    </p>
-    <!-- DanmarksBedste komponent her -->
-  </section>
+  <!-- <DanmarksBedsteSection/> -->
   <SelectedArticles />
-  <section class="articles">
-    <h2>Udvalgte artikler</h2>
-    <p>
-      Har du lyst til et eller andet? Så kan vi stærkt anbefale de her
-      steder/partnere. Find deres profil og læs om dem eller noget
-    </p>
-    <Article />
-    <article>
-      <h3>Udforsk det vidunderlige danmark</h3>
-      <h4>Få inspiration til nye oplevelser - lige uden for døren</h4>
-      <p>
-        Danmark er et yndigt land, fyldt med smukke landskaber, hyggelige byer
-        og skjulte perler; fra hvide sandstrande og grønne skove til historiske
-        slotte og lokale oplevelser. Gennem vores artikler kan du gå på
-        opdagelse i alt det, Danmark har at byde på, og finde inspiration til
-        din næste rejse - uden at skulle rejse sydpå for at få en uforglemmelig
-        sommer.
-      </p>
-      <a href="#">Udforsk alle artikler</a>
-    </article>
-  </section>
-
   <Map />
   <PopularInShop />
 </Layout>

@@ -6,8 +6,18 @@ const customHome = [
   {
     index: 0,
     text: "Hjem",
+    href: "/",
   },
 ];
 ---
 
-<Breadcrumbs customizeLinks={customHome} />
+<div class="breadcrumb">
+  <Breadcrumbs customizeLinks={customHome} />
+</div>
+
+<style>
+  .breadcrumb {
+    margin-top: -4rem;
+    padding: 0 1rem;
+  }
+</style>

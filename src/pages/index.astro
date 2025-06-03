@@ -8,6 +8,7 @@ import Article from "../components/elements/CardArticle.astro";
 import GuideToDenmark from "../components/layout/GuideToDenmark.astro";
 import ForsideHero from "../components/layout/ForsideHero.astro";
 import AboutUs from "../components/layout/AboutUs.astro";
+import PopularInShop from "../components/layout/PopularInShop.astro";
 
 // import { PhEnvelope } from "@phosphor-icons/vue";
 // import Envelope from "phosphor-astro/Envelope.astro";
@@ -53,25 +54,10 @@ import AboutUs from "../components/layout/AboutUs.astro";
         din næste rejse - uden at skulle rejse sydpå for at få en uforglemmelig
         sommer.
       </p>
-      <a href="">Udforsk alle artikler</a>
+      <a href="#">Udforsk alle artikler</a>
     </article>
   </section>
 
   <Map />
-
-  <section class="shop">
-    <h2>Populært i shoppen</h2>
-    <a href="#">Alle produkter</a>
-    <p>
-      Har du lyst til et eller andet? Så kan vi stærkt anbefale de her
-      steder/partnere. Find deres profil og læs om dem eller noget
-    </p>
-  </section>
+  <PopularInShop />
 </Layout>
-
-<!-- <p>
-      i think i am a slot, but dont tell anyone. shhh
-      <PhEnvelope :size=32 color="red"/>
-      <Envelope :size=32 color="red"/>
-    </p> -->
-<!-- I live in the slot -->

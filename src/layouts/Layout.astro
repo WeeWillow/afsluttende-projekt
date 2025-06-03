@@ -1,7 +1,6 @@
 ---
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
-import StrapiTest from "../components/StrapiTest.astro";
 
 interface Props {
   title: string;
@@ -22,9 +21,7 @@ const { title, description, image } = Astro.props;
   </head>
   <body class="flex-centre">
     <main class="flex">
-      <!-- <p>Built with {Astro.generator}</p> -->
       <Header />
-      <StrapiTest />
       <slot />
       <Footer />
     </main>
@@ -42,7 +39,7 @@ const { title, description, image } = Astro.props;
     flex-direction: column;
     gap: 6rem;
   }
-  
+
   @media screen and (min-width: 1200px) {
     main {
       width: min(90vw, 1200px);

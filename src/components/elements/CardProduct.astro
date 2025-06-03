@@ -57,9 +57,14 @@ if (tag === "Restaurantoplevelse") {
   }
 
   .product-card {
-    transition: transform 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: .5rem;
+    background: var(--greyscale-100);
+    border: 1px solid transparent;
+    border-radius: var(--round-min);
+
     img {
       border-radius: var(--round-min);
       width: 100%;
@@ -68,10 +73,9 @@ if (tag === "Restaurantoplevelse") {
     }
 
     &:hover {
-      transform: scale(0.96);
-      outline-offset: 0.5rem;
-      outline: 1px solid var(--secondary-500);
-      border-radius: var(--round-min);
+      background: var(--primary-400-t2);
+      border-color: var(--primary-500);
+      transform: scale(1.02);
     }
 
     a {
@@ -86,8 +90,8 @@ if (tag === "Restaurantoplevelse") {
 
     div {
       position: absolute;
-      top: 210px;
-      left: 10px;
+      bottom: 37%;
+      left: 8%;
       font-size: var(--font-size-400);
     }
   }

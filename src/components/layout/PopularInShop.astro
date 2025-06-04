@@ -27,10 +27,12 @@ const products = data.data;
 </section>
 
 <style>
-  .pop-shop-section {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+
+.pop-shop-section {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+  
   .pop-shop-header {
     justify-content: space-between;
     align-items: end;
@@ -51,6 +53,14 @@ const products = data.data;
   }
 
   .pop-shop-section-products {
+    flex-direction: column;
     justify-content: space-between;
   }
+
+  @media screen and (min-width: 1200px) {
+    .pop-shop-section-products {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 </style>

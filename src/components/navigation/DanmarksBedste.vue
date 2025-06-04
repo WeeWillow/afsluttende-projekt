@@ -83,7 +83,6 @@ import { PhCoffee, PhFarm, PhBread, PhPersonSimpleSwim, PhWindmill, PhBaby, PhTe
 <style scoped>
 .db-section {
   width: 100%;
-  overflow: scroll;
   justify-content: space-between;
   flex-wrap: wrap;
 }

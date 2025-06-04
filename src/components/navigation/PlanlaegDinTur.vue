@@ -81,7 +81,6 @@ import { PhLightbulb, PhMapTrifold, PhPalette, PhTrain, PhWheelchairMotion, PhPe
 <style scoped>
 .pdt-section {
   width: 1fr;
-  overflow: scroll;
   flex-wrap: wrap;
   gap: 1rem;
 }

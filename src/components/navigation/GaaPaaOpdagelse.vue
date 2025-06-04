@@ -137,7 +137,6 @@ import { PhNewspaper, PhUsers, PhUsersFour, PhMountains, PhForkKnife, PhMaskHapp
 <style scoped>
 .gpo-section {
   width: 100%;
-  overflow: scroll;
   justify-content: space-between;
   flex-wrap: wrap;
 }

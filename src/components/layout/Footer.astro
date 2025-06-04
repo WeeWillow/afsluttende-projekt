@@ -6,7 +6,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
 <footer>
   <section class="foot-top-section">
     <article>
-      <img id="foot-logo" src="/opdagDanmarkLogo.png" alt="" />
+      <img id="foot-logo" src="opdagDanmarkLogo.png" alt="" />
       <div>
         <div class="foot-adress">
           <p>OpdagDanmark ApS</p>
@@ -109,7 +109,7 @@ import Envelope from "phosphor-astro/Envelope.astro";
   }
 
   #foot-logo {
-    width: 400px;
+    width: 300px;
   }
 
   section:not(:last-of-type) {
@@ -282,6 +282,12 @@ import Envelope from "phosphor-astro/Envelope.astro";
       button {
         padding: 7px 16px;
       }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    #foot-logo {
+      width: 400px;
     }
   }
 </style>

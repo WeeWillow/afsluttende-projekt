@@ -6,10 +6,11 @@ import Dog from "phosphor-astro/Dog.astro";
 import Walking from "phosphor-astro/PersonSimpleWalk.astro";
 import Heart from "phosphor-astro/Heart.astro";
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
+import Tabs from "../../components/modules/Tabs.vue";
 
 export async function getStaticPaths() {
   const response = await fetch(
-    "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*"
+    "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*",
   );
   const data = await response.json();
   const products = data.data;
@@ -20,7 +21,21 @@ export async function getStaticPaths() {
   }));
 }
 
-const { product } = Astro.props;
+// type defineret for typescript
+type Product = {
+  title: string;
+  brands: string;
+  price: number;
+  oldPrice: number;
+  about: { description: any[] };
+  access: { details: string };
+  terms: { terms_and_conditions: string };
+  images: { formats: { large: { url: string }; small: { url: string } } }[];
+  highlights: any[];
+  categories: { name: string }[];
+};
+
+const { product } = Astro.props as { product: Product };
 const title = product.title;
 const brand = product.brands;
 const price = product.price;
@@ -30,7 +45,7 @@ const access = product.access.details;
 const terms = product.terms.terms_and_conditions;
 const images = product.images;
 const highlights = product.highlights;
-const coverImage = images[0].formats.large.url;
+const coverImage = images?.[0]?.formats?.large?.url ?? "";
 const categories = product.categories;
 
 const tag = product.categories[0].name;
@@ -52,29 +67,16 @@ if (tag === "Restaurantoplevelse") {
   tagBgColor = "var(--primary-100)";
 }
 
-const categorySymbols = {
+const categorySymbols: { [key: string]: any } = {
   t_cycling: Bike,
   t_dog_leashed: Dog,
   t_walking: Walking,
 };
+
+const aboutText = about.map((p) => p.children[0].text);
 ---
 
-<script client:load>
-  function showTab(id) {
-    document
-      .querySelectorAll(".tab-content")
-      .forEach((tab) => (tab.style.display = "none"));
-    document.querySelector(`#${id}`).style.display = "block";
-
-    document
-      .querySelectorAll(".tab-buttons button")
-      .forEach((btn) => btn.classList.remove("active-tab"));
-
-    event.target.classList.add("active-tab");
-  }
-</script>
-
-<Layout>
+<Layout title={title}>
   <Breadcrumb />
   <section class="product-section">
     <article class="product-imgs-container">
@@ -181,25 +183,7 @@ const categorySymbols = {
       </article>
 
       <div>
-        <div class="tabs">
-          <div class="tab-buttons">
-            <button onclick="showTab('about')">Om</button>
-            <button onclick="showTab('access')">Adgang</button>
-            <button onclick="showTab('terms')">Betingelser</button>
-          </div>
-
-          <div class="tab-content" id="about" style="display: block;">
-            {about.map((paragraph) => <p>{paragraph.children[0].text}</p>)}
-          </div>
-
-          <div class="tab-content" id="access" style="display:none">
-            <p>{access}</p>
-          </div>
-
-          <div class="tab-content" id="terms" style="display:none">
-            <p>{terms}</p>
-          </div>
-        </div>
+        <Tabs client:load about={aboutText} access={access} terms={terms} />
       </div>
       <div class="product-buying-container">
         <div class="product-prices">
@@ -389,17 +373,23 @@ const categorySymbols = {
 
   @media screen and (min-width: 1000px) {
     .product-section {
-      display: flex;
-      justify-content: space-between;
-    }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 3rem;
 
-    .product-info-container {
-      max-width: 400px;
+      .product-small-imgs {
+        img {
+          cursor: pointer;
+          border-radius: 0.25rem;
+        }
+      }
     }
 
     .product-cover-img {
-      height: 400px;
-      width: 600px;
+      border-radius: var(--round-general);
+      height: auto;
+      width: 100%;
     }
   }
 </style>

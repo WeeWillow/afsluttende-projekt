@@ -7,12 +7,14 @@ import Basket from "phosphor-astro/Basket.astro";
 import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
 import DropdownPoint from "../navigation/DropdownPoint.vue";
 import MegaMenu from "../navigation/MegaMenu.vue";
+
+const href = `/cases/opdagdanmark-v1/produkter/`;
 ---
 
 <header class="flex">
   <nav class="flex">
-    <a class="nav-logo nav-left" href="/"
-      ><img class="nav-logo-img flex" src="/opdagDanmarkLogo.png" alt="" /></a
+    <a class="nav-logo nav-left" href="/cases/opdagdanmark-v1/"
+      ><img class="nav-logo-img flex" src="opdagDanmarkLogo.png" alt="" /></a
     >
 
     <!-- desktop nav -->
@@ -39,7 +41,7 @@ import MegaMenu from "../navigation/MegaMenu.vue";
         />
       </li>
       <li class="nav-centre-link">
-        <a class="nav-link" href="/produkter">Shop</a>
+        <a class="nav-link" href={href}>Shop</a>
       </li>
       <li class="nav-centre-link"><a class="nav-link" href="#">Om os</a></li>
       <button class="nav-mobile-btn flex">

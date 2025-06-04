@@ -7,6 +7,7 @@ const menuOpen = ref(false);
 const toggle = () => {
   menuOpen.value = !menuOpen.value
 }
+
 </script>
 
 <template>
@@ -17,16 +18,16 @@ const toggle = () => {
 
     <div class="nav-mobile" v-if="menuOpen" aria-label="mobile menu">
       <ul class="nav-mobile-menu-list flex">
-        <li class="nav-mobile-point flex"><a href="/artikler">Gå på opdagelse</a>
+        <li class="nav-mobile-point flex"><a href="/cases/opdagdanmark-v1/artikler">Gå på opdagelse</a>
           <PhCaretDown :size="16" />
         </li>
         <li class="nav-mobile-point flex"><a href="#">Danmarks bedste</a>
           <PhCaretDown :size="16" />
         </li>
-        <li class="nav-mobile-point flex"><a href="/company">Planlæg din tur</a>
+        <li class="nav-mobile-point flex"><a href="#">Planlæg din tur</a>
           <PhCaretDown :size="16" />
         </li>
-        <li class="nav-mobile-point flex"><a href="/shop">Shop</a></li>
+        <li class="nav-mobile-point flex"><a href="/cases/opdagdanmark-v1/shop">Shop</a></li>
         <li class="nav-mobile-point flex"><a href="#">Om os</a></li>
         <div class="nav-mobile-search flex">
           <button class="nav-mobile-btn">

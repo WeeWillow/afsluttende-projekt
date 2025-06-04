@@ -1,6 +1,6 @@
 ---
 const responseAbout = await fetch(
-  "https://young-gift-22aff10d38.strapiapp.com/api/home-about"
+  "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
 );
 
 const dataAbout = await responseAbout.json();
@@ -9,7 +9,7 @@ const homeAbout = dataAbout.data;
 ---
 
 <section class="aboutUs-section flex">
-  <img src="/opdagDanmarkInfo.png" alt="" />
+  <img src="opdagDanmarkInfo.png" alt="" />
   <article>
     <h4>{homeAbout.type}</h4>
     <h2>{homeAbout.title}</h2>

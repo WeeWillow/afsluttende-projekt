@@ -1,13 +1,75 @@
 ---
 import Place from "../elements/CardPlace.astro";
+import ArrowRight from "phosphor-astro/ArrowRight.astro";
+
+const href = `/cases/opdagdanmark-v1/virksomhedsprofiler/faarupsommerland`;
 ---
 
-<section>
-  <h2>Anbefalede Steder</h2>
-  <p>
-    Har du lyst til et eller andet? Så kan vi stærkt anbefale de her
-    steder/partnere. Find deres profil og læs om dem eller noget
-  </p>
-  <a href="">Se alle profiler</a>
-  <Place />
+<section class="place-section flex">
+  <div class="place-section-header flex">
+    <h2>Anbefalede Steder</h2>
+    <a class="see-all-link flex" href="#"
+      >Se alle profiler <ArrowRight width={16} height={16} /></a
+    >
+  </div>
+  <div class="place-section-grid flex">
+    <Place
+      heading="Fårup Sommerland"
+      subheading="Oplevelse"
+      src="faarupImg/hero.webp"
+      href={href}
+    />
+    <Place
+      heading="Bagergården Hinnerup"
+      subheading="Restaurantoplevelse"
+      src="bagergaarden.png"
+      href={href}
+    />
+    <Place
+      heading="Azzurra Nordkraft"
+      subheading="Restaurantoplevelse"
+      src="azzura.png"
+      href={href}
+    />
+  </div>
 </section>
+
+<style>
+  .place-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .place-section-grid {
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .place-section-header {
+    justify-content: space-between;
+    align-items: end;
+    h2 {
+      color: var(--primary-700);
+      font-size: 2.5rem;
+    }
+  }
+
+  .see-all-link {
+    text-decoration: none;
+    color: var(--primary-500);
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    &:hover {
+      color: var(--accent-500);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .place-section-grid {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+</style>

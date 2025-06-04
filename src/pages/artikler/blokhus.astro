@@ -3,6 +3,7 @@ import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
 
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
+import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
 ---
 
 <Layout title="Artikel: Blokhus">
@@ -56,7 +57,7 @@ import Breadcrumb from "../../components/modules/Breadcrumb.astro";
   </section>
   <section class="blokhus-body-section blokhus-article-width">
     <h2>Hvad kan man lave i Blokhus?</h2>
-    <img src="strandvejenBlokhus.jpg" alt="" />
+    <img src="/cases/opdagdanmark-v1/strandvejenBlokhus.jpg" alt="" />
     <p>
       Det første fly, der lægger an til landing på Blokhus Strand, er det røde
       hjemmebyggede Van’s RV-8, der har deltaget i samtlige Fly-in events i
@@ -65,6 +66,7 @@ import Breadcrumb from "../../components/modules/Breadcrumb.astro";
       første fly-in på stranden, dengang med deltagelse af tre fly.
     </p>
   </section>
+  <RecommendedPlaces/>
 </Layout>
 
 <style>

@@ -21,9 +21,9 @@ const slots = {
   <section class="mega-menu" v-if="isOpen" @mouseenter="cancelHide" @mouseleave="hide">
     <component :is="slots[activeSlot]" />
     <div class="cta-list flex">
-      <EntryPointBlock heading="Nyhedsbrev" imgSrc="/cta-nyhedsbrev.png" client:load />
-      <EntryPointBlock heading="KlubDanmark" imgSrc="/cta-klubdanmark.png" client:load />
-      <EntryPointBlock heading="Hent Appen" imgSrc="/cta-hentappen.png" client:load />
+      <EntryPointBlock heading="Nyhedsbrev" imgSrc="/cases/opdagdanmark-v1/cta-nyhedsbrev.png" client:load />
+      <EntryPointBlock heading="KlubDanmark" imgSrc="/cases/opdagdanmark-v1/cta-klubdanmark.png" client:load />
+      <EntryPointBlock heading="Hent Appen" imgSrc="/cases/opdagdanmark-v1/cta-hentappen.png" client:load />
     </div>
   </section>
 </template>
@@ -39,7 +39,7 @@ const slots = {
     justify-content: space-between;
     padding: 2rem;
     background: var(--primary-100-t1);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(15px);
     border-radius: var(--round-25);
     border: 1px solid var(--primary-500-t2);
     max-height: 75vh;

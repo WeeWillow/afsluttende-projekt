@@ -1,31 +1,57 @@
 ---
 import ArrowRight from "phosphor-astro/ArrowRight.astro";
+import CardArticle from "../elements/CardArticle.astro";
+
+const href = `/cases/opdagdanmark-v1/artikler/blokhus`;
 ---
 
 <section class="selected-articles-section flex">
-  <div class="selected-articles-section-content">
-    <div class="selected-articles-header flex">
-      <h2>Udvalgte Artikler</h2>
-      <a class="flex" href="#"
-        >Se alle artikler <ArrowRight width={16} height={16} /></a
-      >
-    </div>
+  <div class="selected-articles-header flex">
+    <h2>Udvalgte Artikler</h2>
+    <a class="see-all-link flex" href="#"
+      >Se alle artikler <ArrowRight width={16} height={16} /></a
+    >
   </div>
   <div class="articles-grid">
-    <a href="/artikler/blokhus" class="article-card-link">
-      <article class="article-card flex">
-        <img class="article-card-image" src="/blokhusStrand.webp" alt="" />
-        <div class="article-card-overlay"></div>
-        <div class="article-card-content">
-          <h2>KlubDanmark</h2>
-          <h3>
-            Få adgang til eksklusive fordele og spar penge på 500+ oplevelser i
-            hele Danmark. Medlemskab giver dig også adgang til 450+ digitale
-            cykel- og vandreruter.
-          </h3>
-        </div>
-      </article>
-    </a>
+    <CardArticle
+      heading="Dyp tæerne ved blokhus"
+      subheading="Gå en tur i sandet, bad i bølgerne eller se solen gå ned over Vesterhavet"
+      src="blokhusStrand.webp"
+      href={href}
+    />
+
+    <CardArticle
+      heading="Oplev natur og strand ved Væggerløse"
+      subheading="Danmarks bedste strande. Ud over den ideelle beliggenhed tæt på frisk luft og saltvand er feriehuset også tæt på butikker og det hyggelige feriested Marielyst."
+      src="vaeggerloseStrand.jpg"
+      href={href}
+    />
+
+    <CardArticle
+      heading="Glamping hos Naturlig på Korsgaarden"
+      subheading="Blot halvanden times kørsel fra København, finder du de naturskønne og afslappede rammer om Naturlig på Korsgaarden."
+      src="glamping.jpg"
+      href={href}
+    />
+
+    <article class="article-card flex">
+      <div class="article-card-content">
+        <h2>Udforsk det vidunderlige danmark</h2>
+        <h3>Få inspiration til nye oplevelser - lige uden for døren</h3>
+      </div>
+      <p>
+        Danmark er et yndigt land, fyldt med smukke landskaber, hyggelige byer
+        og skjulte perler; fra hvide sandstrande og grønne skove til historiske
+        slotte og lokale oplevelser. Gennem vores artikler kan du gå på
+        opdagelse i alt det, Danmark har at byde på, og finde inspiration til
+        din næste rejse - uden at skulle rejse sydpå for at få en uforglemmelig
+        sommer.
+      </p>
+
+      <a class="see-all-link flex" href="#"
+        >Se alle artikler <ArrowRight width={16} height={16} />
+      </a>
+    </article>
   </div>
 </section>
 
@@ -34,79 +60,87 @@ import ArrowRight from "phosphor-astro/ArrowRight.astro";
     flex-direction: column;
     gap: 1.5rem;
   }
+
+  .see-all-link {
+    text-decoration: none;
+    color: var(--primary-500);
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    &:hover {
+      color: var(--accent-500);
+    }
+  }
   .selected-articles-header {
     justify-content: space-between;
     align-items: end;
-    a {
-      text-decoration: none;
-      color: var(--primary-500);
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 1rem;
-      &:hover {
-        color: var(--accent-500);
-      }
-    }
     h2 {
       color: var(--primary-700);
       font-size: 2.5rem;
     }
   }
 
-  .selected-articles-section-products {
-    justify-content: space-between;
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
   }
 
-  .article-card-link {
-    text-decoration: none;
-    border-radius: var(--round-min);
-    transition: all 200ms ease-in-out;
+  .article-card {
+    cursor: pointer;
+    height: fit-content;
+    border: 1px solid var(--secondary-500);
+    border-radius: var(--round-general);
+    background: var(--secondary-200-t2);
+    color: var(--secondary-500);
+    padding: 1.5rem 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
     outline: 1px solid var(--greyscale-100);
+    transition: all 200ms ease-in-out;
+
     &:hover {
-      outline: 1px solid var(--secondary-500);
+      background: var(--primary-100-t1);
+      outline: 1px solid var(--primary-500-t2);
+      color: var(--primary-600);
+      border-color: var(--primary-500);
       outline-offset: 0.5rem;
       transform: scale(0.99);
       box-shadow: rgba(31, 30, 61, 0.13) 0px 2px 8px 0px;
-    }
-  }
-  .article-card {
-    text-align: end;
-    align-items: end;
-    position: relative;
-    overflow: hidden;
-    padding: 2rem 2.5rem;
-    border: 1px solid var(--secondary-500);
-    background: var(--primary-400);
-    height: 16rem;
-    flex-direction: column;
-    border-radius: var(--round-general);
 
-    color: var(--greyscale-100);
+      .see-all-link {
+        color: var(--accent-500);
+        border-color: var(--accent-500);
+      }
+    }
+
+    .see-all-link {
+      width: fit-content;
+      border-bottom: 1px solid var(--secondary-500);
+      color: var(--secondary-500);
+    }
+
+    .article-card-content {
+      h3 {
+        font-style: italic;
+        font-size: 1rem;
+        padding: 0.25rem 0 0;
+        font-weight: 400;
+        line-height: 100%;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 0.7rem;
+    }
 
     h2 {
-      font-size: 4rem;
+      font-size: 1rem;
+      text-transform: capitalize;
     }
-  }
-
-  .article-card-image,
-  .article-card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-
-  .article-card-overlay {
-    backdrop-filter: blur(1px);
-    background: var(--utility-gradient-blue-left);
-    z-index: 1;
-  }
-
-  .article-card-buttons {
-    gap: 0.5rem;
   }
 
   .article-card-buttons,
@@ -114,13 +148,38 @@ import ArrowRight from "phosphor-astro/ArrowRight.astro";
     z-index: 2;
   }
 
-  .article-card-content {
-    h3 {
-      font-size: 1.2rem;
-      padding: 0.25rem 0 0;
-      width: 40ch;
-      font-weight: 400;
-      line-height: 100%;
+  @media screen and (min-width: 1200px) {
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+
+    .article-card {
+      height: 20rem;
+      padding: 2rem 1.5rem;
+      gap: auto;
+
+      .article-card-content {
+        h3 {
+          font-style: italic;
+          font-size: 1.2rem;
+          padding: 0.25rem 0 0;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+      }
     }
   }
 </style>

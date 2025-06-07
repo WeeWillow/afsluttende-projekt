@@ -8,13 +8,19 @@ import Heart from "phosphor-astro/Heart.astro";
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
 import Tabs from "../../components/modules/Tabs.vue";
 
+// https://medium.com/@flnzba/dynamic-routes-in-astro-load-parameters-from-json-be766a7a2a17
+// Definere en asynkron funktion
 export async function getStaticPaths() {
+  // Henter data fra vores strapi
   const response = await fetch(
-    "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*",
+    "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*"
   );
+  // konvetere daten til json
   const data = await response.json();
+  // får fat i produkterne fra json daten
   const products = data.data;
 
+  // retunere en liste af ruter og sender dem som en prop
   return products.map((product: any) => ({
     params: { slug: product.title.toLowerCase() },
     props: { product },

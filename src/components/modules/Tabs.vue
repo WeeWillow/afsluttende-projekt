@@ -13,6 +13,7 @@ const activeTab = ref('about')
 </script>
 
 <template>
+  <!-- https://www.w3schools.com/howto/howto_js_tabs.asp -->
   <article class="tabs">
      <!-- Når knapperne trykkes på, skifter de aktiv fane -->
     <div class="tab-buttons">

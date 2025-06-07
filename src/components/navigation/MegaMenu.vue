@@ -1,14 +1,16 @@
 <script setup>
 import { useMegaMenu } from "../../composables/useMegaMenu";
 
+// Importerer de sider, der kan vises inde i menuen
 import GaaPaaOpdagelse from "./GaaPaaOpdagelse.vue";
 import PlanlaegDinTur from "./PlanlaegDinTur.vue";
 import DanmarksBedste from "./DanmarksBedste.vue";
 
 import EntryPointBlock from "./EntryPointBlock.vue";
 
+// Får adgang til defineret værdier og funktioner fra useMegaMenu.js
 const { isOpen, activeSlot, hide, cancelHide } = useMegaMenu();
-
+ 
 const slots = {
   GaaPaaOpdagelse,
   PlanlaegDinTur,
@@ -18,7 +20,9 @@ const slots = {
 </script>
 
 <template>
+  <!-- Viser menuen, hvis isOpen er sand. Den forbliver åben når man holder musen over og lukker når man forlader den -->
   <section class="mega-menu" v-if="isOpen" @mouseenter="cancelHide" @mouseleave="hide">
+    <!-- Viser den valgte navigation -->
     <component :is="slots[activeSlot]" />
     <div class="cta-list flex">
       <EntryPointBlock heading="Nyhedsbrev" imgSrc="/cases/opdagdanmark-v1/cta-nyhedsbrev.png" client:load />

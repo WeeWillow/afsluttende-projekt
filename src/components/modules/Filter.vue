@@ -2,32 +2,13 @@
 import { PhCaretDown } from "@phosphor-icons/vue";
 </script>
 <template>
-
+<!-- https://www.w3schools.com/howto/howto_js_accordion.asp -->
   <section>
     <button class="filter-accordion flex">Tema <PhCaretDown :size="20" :color="'var(--primary-700)'" /></button>
-    <div class="filter-options">
-      <p>Lorem ipsum...</p>
-    </div>
-    
     <button class="filter-accordion flex">Pris <PhCaretDown :size="20" :color="'var(--primary-700)'" /></button>
-    <div class="filter-options">
-      <p>Lorem ipsum...</p>
-    </div>
-    
     <button class="filter-accordion flex">Område <PhCaretDown :size="20" :color="'var(--primary-700)'" /></button>
-    <div class="filter-options">
-      <p>Lorem ipsum...</p>
-    </div>
-    
     <button class="filter-accordion flex">Varighed <PhCaretDown :size="20" :color="'var(--primary-700)'" /></button>
-    <div class="filter-options">
-      <p>Lorem ipsum...</p>
-    </div>
-
     <button class="filter-accordion flex">Aktivitetsniveau <PhCaretDown :size="20" :color="'var(--primary-700)'" /></button>
-    <div class="filter-options">
-      <p>Lorem ipsum...</p>
-    </div>
   </section>
 </template>
 <style>
@@ -49,14 +30,6 @@ section{
   font-family: "Krub", sans-serif;;
   border-bottom: 2px solid var(--primary-700);
   color: var(--primary-700);
-  transition: 0.4s;
-  
-
-}
-
-.filter-options {
-  display: none;
-  overflow: hidden;
 }
 
 @media screen and (min-width: 700px) {

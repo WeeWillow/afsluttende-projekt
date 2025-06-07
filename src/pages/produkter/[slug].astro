@@ -59,6 +59,7 @@ const tag = product.categories[0].name;
 let tagColor = "";
 let tagBgColor = "";
 
+// Hvis tagget har en bestemt string, for den en anden farve
 if (tag === "Restaurantoplevelse") {
   tagColor = "var(--secondary-500)";
   tagBgColor = "var(--secondary-200)";
@@ -121,6 +122,8 @@ const aboutText = about.map((p) => p.children[0].text);
           </p>
         </div>
         <div class="product-categories">
+          <!-- Map fungere som et forloop. Map er mere læsevenligt og bruges til at ændre et array-->
+          <!-- Looper gennem hver kategori, finder den rigtige kategori baseret på dens navn, viser ikonet hvis kategorien findes -->
           {
             categories.map((category) => {
               const IconComponent = categorySymbols[category.name];
@@ -141,6 +144,7 @@ const aboutText = about.map((p) => p.children[0].text);
       <p class="product-brand">{brand}</p>
       <article class="highlights flex">
         {
+          // Hvis array af highlights er ikke tom, går den igennem hvert highlight. hvis hightlight.__component, matcher en bestemt type, vil den vises.
           highlights.length > 0 &&
             highlights.map((highlight) => {
               if (highlight.__component === "highlights.poi") {

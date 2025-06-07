@@ -8,6 +8,11 @@ import EventCard from "../../components/elements/CardEvents.astro";
 import AttractionCard from "../../components/elements/CardAttraction.astro";
 import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
 
+import moterMille from "../assets/faarupImg/moterMille.webp";
+import bedsteforaeldreDag from "../assets/faarupImg/bedsteforaeldreDag.webp";
+import rekorddag from "../assets/faarupImg/rekorddag.jpg";
+import hrSkaeg from "../assets/faarupImg/hrSkaeg.jpg";
+
 const customFaarup = [
   {
     index: 0,
@@ -16,68 +21,52 @@ const customFaarup = [
 ];
 
 const events = [
-  {
-    image: "/cases/opdagdanmark-v1/faarupImg/moterMille.webp",
-    date: "31 Maj",
-    title: "Motor mille",
-  },
-  {
-    image: "/cases/opdagdanmark-v1/faarupImg/bedsteforaeldreDag.webp",
-    date: "10 Oktober",
-    title: "Bedsteforældredag",
-  },
-  {
-    image: "/cases/opdagdanmark-v1/faarupImg/rekorddag.jpg",
-    date: "27 August",
-    title: "Fårups store rekorddag",
-  },
-  {
-    image: "/cases/opdagdanmark-v1/faarupImg/hrSkaeg.jpg",
-    date: "23 August",
-    title: "Hr. Skæg",
-  },
+  { image: moterMille, date: "31 Maj", title: "Motor mille" },
+  { image: bedsteforaeldreDag, date: "10 Oktober", title: "Bedsteforældredag" },
+  { image: rekorddag, date: "27 August", title: "Fårups store rekorddag" },
+  { image: hrSkaeg, date: "23 August", title: "Hr. Skæg" },
 ];
 
 const forlystelser = [
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/mineexpressen.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/mineexpressen.webp`,
     title: "Mine-ekspressen",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/flagermusen.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/flagermusen.webp`,
     title: "Flagermusen",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/trestammer.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/trestammer.webp`,
     title: "Træstammer",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/orkanen.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/orkanen.webp`,
     title: "Orkanen",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/foenix.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/foenix.webp`,
     title: "Fønix",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/falken.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/falken.webp`,
     title: "Falken",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/lynetGroen.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/lynetGroen.webp`,
     title: "Lynet",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: "/cases/opdagdanmark-v1/faarupImg/forlystelser/saven.webp",
+    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/saven.webp`,
     title: "Saven",
-    text: "En rutjebanetur rundt i bratte sving mellem træer",
+    text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
 ];
 ---
@@ -140,7 +129,7 @@ const forlystelser = [
     </p>
     <img src="/cases/opdagdanmark-v1/faarupImg/interaktivt-kort.jpeg" alt="" />
   </section>
-  <RecommendedPlaces/>
+  <RecommendedPlaces />
 </Layout>
 
 <style>

@@ -6,11 +6,13 @@ const responseHero = await fetch(
 
 const dataHero = await responseHero.json();
 const homeHero = dataHero.data;
+
+import image from '../assets/hero-section.jpg';
 ---
 
 <article class="hero-wrapper">
   <section class="hero-section flex">
-    <img class="hero-section-image" src="hero-section.jpg" alt="" />
+    <img class="hero-section-image" src={image.src} alt="" />
     <div class="hero-section-overlay"></div>
     <div class="hero-section-content">
       <h1>{homeHero.title}</h1>

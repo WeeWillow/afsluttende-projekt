@@ -6,10 +6,11 @@ const responseAbout = await fetch(
 const dataAbout = await responseAbout.json();
 
 const homeAbout = dataAbout.data;
+import image from "../assets/opdagDanmarkInfo.png";
 ---
 
 <section class="aboutUs-section flex">
-  <img src="opdagDanmarkInfo.png" alt="" />
+  <img src={image.src} alt="" />
   <article>
     <h4>{homeAbout.type}</h4>
     <h2>{homeAbout.title}</h2>

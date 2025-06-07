@@ -8,18 +8,20 @@ import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
 import DropdownPoint from "../navigation/DropdownPoint.vue";
 import MegaMenu from "../navigation/MegaMenu.vue";
 
-const href = `/cases/opdagdanmark-v1/produkter/`;
+const href = `${import.meta.env.BASE_URL}produkter/`;
+import image from "../assets/opdagDanmarkLogo.png";
 ---
 
 <header class="flex">
   <nav class="flex">
-    <a class="nav-logo nav-left" href="/cases/opdagdanmark-v1/"
-      ><img class="nav-logo-img flex" src="/cases/opdagdanmark-v1/opdagDanmarkLogo.png" alt="" /></a
+    <a class="nav-logo nav-left" href={import.meta.env.BASE_URL}
+      ><img class="nav-logo-img flex" src={image.src} alt="" /></a
     >
 
     <!-- desktop nav -->
     <ul class="nav-centre nav-desktop">
       <li class="nav-centre-link">
+        <!-- partial hydration, astro sender js med til browser -->
         <DropdownPoint
           client:load
           label="Gå på opdagelse"
@@ -27,6 +29,7 @@ const href = `/cases/opdagdanmark-v1/produkter/`;
         />
       </li>
       <li class="nav-centre-link">
+        <!-- partial hydration, astro sender js med til browser -->
         <DropdownPoint
           client:load
           label="Danmarks bedste"
@@ -34,6 +37,7 @@ const href = `/cases/opdagdanmark-v1/produkter/`;
         />
       </li>
       <li class="nav-centre-link">
+        <!-- partial hydration, astro sender js med til browser -->
         <DropdownPoint
           client:load
           label="Planlæg din tur"

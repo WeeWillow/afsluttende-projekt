@@ -1,0 +1,87 @@
+---
+
+---
+
+<a href="" class="club-section-link">
+  <section class="club-section flex">
+    <img class="club-section-image" src="/klubdanmark-section.png" alt="" />
+    <div class="club-section-overlay"></div>
+    <div class="club-section-content">
+      <h2>KlubDanmark</h2>
+      <h3>
+        Få adgang til eksklusive fordele og spar penge på 500+ oplevelser i hele
+        Danmark. Medlemskab giver dig også adgang til 450+ digitale cykel- og
+        vandreruter.
+      </h3>
+    </div>
+  </section>
+</a>
+
+<style>
+  .club-section-link {
+    text-decoration: none;
+    border-radius: var(--round-min);
+    transition: all 200ms ease-in-out;
+    outline: 1px solid var(--greyscale-100);
+    &:hover {
+      outline: 1px solid var(--secondary-500);
+      outline-offset: 0.5rem;
+      transform: scale(0.99);
+      box-shadow: rgba(31, 30, 61, 0.13) 0px 2px 8px 0px;
+    }
+  }
+  .club-section {
+    text-align: end;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 2.5rem;
+    border: 1px solid var(--secondary-500);
+    background: var(--primary-400);
+    height: 16rem;
+    flex-direction: column;
+    border-radius: var(--round-general);
+
+    color: var(--greyscale-100);
+
+    h2 {
+      font-size: 4rem;
+    }
+  }
+
+  .club-section-image,
+  .club-section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .club-section-overlay {
+    backdrop-filter: blur(1px);
+    background: var(--utility-gradient-blue-left);
+    z-index: 1;
+  }
+
+  .club-section-buttons {
+    gap: 0.5rem;
+  }
+
+  .club-section-buttons,
+  .club-section-content {
+    z-index: 2;
+  }
+
+  .club-section-content {
+    h3 {
+      font-size: 1.2rem;
+      padding: 0.25rem 0 0;
+      width: 40ch;
+      font-weight: 400;
+      line-height: 100%;
+    }
+  }
+</style>

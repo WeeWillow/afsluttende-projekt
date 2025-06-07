@@ -3,20 +3,25 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Map from "../components/layout/Map.astro";
 import FocusEntryPoint from "../components/elements/CardFocusEntryPoint.astro";
-import Article from "../components/elements/CardArticle.astro";
 import GuideToDenmark from "../components/layout/GuideToDenmark.astro";
 import ForsideHero from "../components/layout/ForsideHero.astro";
 import AboutUs from "../components/layout/AboutUs.astro";
 import PopularInShop from "../components/layout/PopularInShop.astro";
 import SelectedArticles from "../components/layout/SelectedArticles.astro";
-import DanmarksBedsteSection from "../components/layout/DanmarksBedsteSection.astro";
 import RecommendedPlaces from "../components/layout/RecommendedPlaces.astro";
+import CTAHentAppen from "../components/navigation/CTAHentAppen.astro";
+// import gemt til senere udvikling
+// import DanmarksBedsteSection from "../components/layout/DanmarksBedsteSection.astro";
 
+// eksempel på import af ikoner til vue
 // import { PhEnvelope } from "@phosphor-icons/vue";
+
+// eksempel på import af ikoner til astro
 // import Envelope from "phosphor-astro/Envelope.astro";
 ---
 
 <Layout title="OpdagDanmark">
+  <CTAHentAppen/> <!-- tilføjet til testing -->
   <ForsideHero />
   
   <section>
@@ -27,6 +32,7 @@ import RecommendedPlaces from "../components/layout/RecommendedPlaces.astro";
   <RecommendedPlaces />
 
   <GuideToDenmark />
+  <!-- komponent gemt til senere udvikling -->
   <!-- <DanmarksBedsteSection/> -->
   <SelectedArticles />
   <Map />

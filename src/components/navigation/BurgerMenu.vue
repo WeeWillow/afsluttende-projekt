@@ -27,7 +27,7 @@ const toggle = () => {
         <li class="nav-mobile-point flex"><a href="#">Planlæg din tur</a>
           <PhCaretDown :size="16" />
         </li>
-        <li class="nav-mobile-point flex"><a href="/cases/opdagdanmark-v1/shop">Shop</a></li>
+        <li class="nav-mobile-point flex"><a href="/cases/opdagdanmark-v1/produkter">Shop</a></li>
         <li class="nav-mobile-point flex"><a href="#">Om os</a></li>
         <div class="nav-mobile-search flex">
           <button class="nav-mobile-btn">

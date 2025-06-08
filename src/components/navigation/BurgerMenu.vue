@@ -1,12 +1,17 @@
 <script setup>
 import { ref } from 'vue';
-import { PhList, PhCaretDown, PhMagnifyingGlass, PhDownloadSimple, PhUser, PhBasket } from "@phosphor-icons/vue";
+import { PhList, PhCaretDown, PhMagnifyingGlass, PhUser, PhBasket } from "@phosphor-icons/vue";
+
 import ButtonFunction from '../modules/ButtonFunction.vue';
 
 const menuOpen = ref(false);
 const toggle = () => {
   menuOpen.value = !menuOpen.value
 }
+
+const baseUrl = import.meta.env.BASE_URL;
+const artiklerHref = baseUrl + 'artikler';
+const produkterHref = baseUrl + 'produkter';
 
 </script>
 
@@ -18,7 +23,7 @@ const toggle = () => {
 
     <div class="nav-mobile" v-if="menuOpen" aria-label="mobile menu">
       <ul class="nav-mobile-menu-list flex">
-        <li class="nav-mobile-point flex"><a :href="`${import.meta.env.BASE_URL}artikler`">Gå på opdagelse</a>
+        <li class="nav-mobile-point flex"><a :href="artiklerHref">Gå på opdagelse</a>
           <PhCaretDown :size="16" />
         </li>
         <li class="nav-mobile-point flex"><a href="#">Danmarks bedste</a>
@@ -27,7 +32,7 @@ const toggle = () => {
         <li class="nav-mobile-point flex"><a href="#">Planlæg din tur</a>
           <PhCaretDown :size="16" />
         </li>
-        <li class="nav-mobile-point flex"><a :href="`${import.meta.env.BASE_URL}produkter`">Shop</a></li>
+        <li class="nav-mobile-point flex"><a :href="produkterHref">Shop</a></li>
         <li class="nav-mobile-point flex"><a href="#">Om os</a></li>
         <div class="nav-mobile-search flex">
           <button class="nav-mobile-btn">
@@ -50,7 +55,6 @@ const toggle = () => {
       </div>
     </div>
   </div>
-
 </template>
 
 <style scoped>

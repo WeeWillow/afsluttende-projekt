@@ -3,6 +3,10 @@ import Place from "../elements/CardPlace.astro";
 import ArrowRight from "phosphor-astro/ArrowRight.astro";
 
 const href = `${import.meta.env.BASE_URL}virksomhedsprofiler/faarupsommerland`;
+
+import faarupImg from "../assets/faarupImg/hero.webp";
+import bagergaardenImg from "../assets/bagergaarden.png";
+import azzurraImg from "../assets/azzura.png";
 ---
 
 <section class="place-section flex">
@@ -16,19 +20,19 @@ const href = `${import.meta.env.BASE_URL}virksomhedsprofiler/faarupsommerland`;
     <Place
       heading="Fårup Sommerland"
       subheading="Oplevelse"
-      src="faarupImg/hero.webp"
+      src={faarupImg}
       href={href}
     />
     <Place
       heading="Bagergården Hinnerup"
       subheading="Restaurantoplevelse"
-      src="bagergaarden.png"
+      src={bagergaardenImg}
       href={href}
     />
     <Place
       heading="Azzurra Nordkraft"
       subheading="Restaurantoplevelse"
-      src="azzura.png"
+      src={azzurraImg}
       href={href}
     />
   </div>

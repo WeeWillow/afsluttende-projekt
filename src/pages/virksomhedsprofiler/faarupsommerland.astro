@@ -8,10 +8,10 @@ import EventCard from "../../components/elements/CardEvents.astro";
 import AttractionCard from "../../components/elements/CardAttraction.astro";
 import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
 
-import moterMille from "../assets/faarupImg/moterMille.webp";
-import bedsteforaeldreDag from "../assets/faarupImg/bedsteforaeldreDag.webp";
-import rekorddag from "../assets/faarupImg/rekorddag.jpg";
-import hrSkaeg from "../assets/faarupImg/hrSkaeg.jpg";
+import moterMille from "../../assets/faarupImg/moterMille.webp";
+import bedsteforaeldreDag from "../../assets/faarupImg/bedsteforaeldreDag.webp";
+import rekorddag from "../../assets/faarupImg/rekorddag.jpg";
+import hrSkaeg from "../../assets/faarupImg/hrSkaeg.jpg";
 
 const customFaarup = [
   {
@@ -69,17 +69,16 @@ const forlystelser = [
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
 ];
+
+import imgHero from "../../assets/faarupImg/hero.webp";
+import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
 ---
 
 <Layout title="Fårup Sommerland">
   <Breadcrumb customizeLinks={customFaarup} />
 
   <section class="map-section flex">
-    <img
-      class="map-section-image"
-      src="/cases/opdagdanmark-v1/faarupImg/hero.webp"
-      alt=""
-    />
+    <img class="map-section-image" src={imgHero.src} alt="" />
     <div class="map-section-overlay"></div>
     <div class="map-section-content">
       <h1>Fårup Sommerland</h1>
@@ -127,7 +126,7 @@ const forlystelser = [
       Få overblikket over parkens forlystelser med vores interaktive oversigt
       (klik på billedet for at åbne)
     </p>
-    <img src="/cases/opdagdanmark-v1/faarupImg/interaktivt-kort.jpeg" alt="" />
+    <img src={imgMap.src} alt="" />
   </section>
   <RecommendedPlaces />
 </Layout>

@@ -4,6 +4,8 @@ import Layout from "../../layouts/Layout.astro";
 
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
 import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
+import imgBlokhus from "../../assets/blokhusStrand.webp";
+import imgStrandvej from "../../assets/strandvejenBlokhus.jpg";
 ---
 
 <Layout title="Artikel: Blokhus">
@@ -12,7 +14,7 @@ import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
     <article>
       <h1>Hold dig kølig i solen</h1>
       <h1>Dyp tæerne ved Blokhus</h1>
-      <img src="blokhusStrand.webp" alt="" />
+      <img src={imgBlokhus.src} alt="" />
     </article>
     <article class="blokhus-article-width">
       <h2>Blokhus - strand, stemning og meget at lave</h2>
@@ -56,7 +58,7 @@ import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
   </section>
   <section class="blokhus-body-section blokhus-article-width">
     <h2>Hvad kan man lave i Blokhus?</h2>
-    <img src="/cases/opdagdanmark-v1/strandvejenBlokhus.jpg" alt="" />
+    <img src={imgStrandvej.src} alt="" />
     <p>
       Blokhus byder på meget mere end strand og hav. For de eventyrlige er der
       mulighed for at cykle eller vandre i Blokhus Klitplantage, og i Gateway

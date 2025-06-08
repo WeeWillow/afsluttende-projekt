@@ -12,7 +12,7 @@ import EntryPointBlock from "./EntryPointBlock.vue";
 
 // Får adgang til defineret værdier og funktioner fra useMegaMenu.js
 const { isOpen, activeSlot, hide, cancelHide } = useMegaMenu();
- 
+
 const slots = {
   GaaPaaOpdagelse,
   PlanlaegDinTur,
@@ -22,8 +22,6 @@ const slots = {
 import imgNyhedsbrev from '../../assets/cta-nyhedsbrev.png';
 import imgKlubDanmark from '../../assets/cta-klubdanmark.png';
 import imgHentAppen from '../../assets/cta-hentappen.png';
-
-
 </script>
 
 <template>
@@ -32,9 +30,9 @@ import imgHentAppen from '../../assets/cta-hentappen.png';
     <!-- Viser den valgte navigation -->
     <component :is="slots[activeSlot]" />
     <div class="cta-list flex">
-      <EntryPointBlock heading="Nyhedsbrev" :imgSrc="imgNyhedsbrev" client:load />
-      <EntryPointBlock heading="KlubDanmark" :imgSrc="imgKlubDanmark" client:load />
-      <EntryPointBlock heading="Hent Appen" :imgSrc="imgHentAppen" client:load />
+      <EntryPointBlock heading="Nyhedsbrev" :imgSrc="imgNyhedsbrev.src" client:load />
+      <EntryPointBlock heading="KlubDanmark" :imgSrc="imgKlubDanmark.src" client:load />
+      <EntryPointBlock heading="Hent Appen" :imgSrc="imgHentAppen.src" client:load />
     </div>
   </section>
 </template>

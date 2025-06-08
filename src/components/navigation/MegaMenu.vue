@@ -19,6 +19,11 @@ const slots = {
   DanmarksBedste
 };
 
+import imgNyhedsbrev from '../../assets/cta-nyhedsbrev.png';
+import imgKlubDanmark from '../../assets/cta-klubdanmark.png';
+import imgHentAppen from '../../assets/cta-hentappen.png';
+
+
 </script>
 
 <template>
@@ -27,9 +32,9 @@ const slots = {
     <!-- Viser den valgte navigation -->
     <component :is="slots[activeSlot]" />
     <div class="cta-list flex">
-      <EntryPointBlock heading="Nyhedsbrev" imgSrc="/cases/opdagdanmark-v1/cta-nyhedsbrev.png" client:load />
-      <EntryPointBlock heading="KlubDanmark" imgSrc="/cases/opdagdanmark-v1/cta-klubdanmark.png" client:load />
-      <EntryPointBlock heading="Hent Appen" imgSrc="/cases/opdagdanmark-v1/cta-hentappen.png" client:load />
+      <EntryPointBlock heading="Nyhedsbrev" :imgSrc="imgNyhedsbrev" client:load />
+      <EntryPointBlock heading="KlubDanmark" :imgSrc="imgKlubDanmark" client:load />
+      <EntryPointBlock heading="Hent Appen" :imgSrc="imgHentAppen" client:load />
     </div>
   </section>
 </template>

@@ -8,7 +8,7 @@ defineProps({
 <template>
   <a href="#" class="etb-section-link">
     <section class="etb-section flex">
-      <img class="etb-section-image" :src="imgSrc.src" :alt="heading" />
+      <img class="etb-section-image" :src="imgSrc" :alt="heading" />
       <div class="etb-section-overlay"></div>
       <div class="etb-section-content">
         <h2>{{ heading }}</h2>

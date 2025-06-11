@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
 
@@ -13,6 +14,15 @@ import bedsteforaeldreDag from "../../assets/faarupImg/bedsteforaeldreDag.webp";
 import rekorddag from "../../assets/faarupImg/rekorddag.jpg";
 import hrSkaeg from "../../assets/faarupImg/hrSkaeg.jpg";
 
+import imgMine from "../../assets/faarupImg/forlystelser/mineexpressen.webp";
+import imgFlage from "../../assets/faarupImg/forlystelser/flagermusen.webp";
+import imgTræst from "../../assets/faarupImg/forlystelser/trestammer.webp";
+import imgOrkan from "../../assets/faarupImg/forlystelser/orkanen.webp";
+import imgFønix from "../../assets/faarupImg/forlystelser/foenix.webp";
+import imgFalke from "../../assets/faarupImg/forlystelser/falken.webp";
+import imgLynet from "../../assets/faarupImg/forlystelser/lynetGroen.webp";
+import imgSaven from "../../assets/faarupImg/forlystelser/saven.webp";
+
 const customFaarup = [
   {
     index: 0,
@@ -21,50 +31,54 @@ const customFaarup = [
 ];
 
 const events = [
-  { image: moterMille, date: "31 Maj", title: "Motor mille" },
-  { image: bedsteforaeldreDag, date: "10 Oktober", title: "Bedsteforældredag" },
-  { image: rekorddag, date: "27 August", title: "Fårups store rekorddag" },
-  { image: hrSkaeg, date: "23 August", title: "Hr. Skæg" },
+  { image: moterMille.src, date: "31 Maj", title: "Motor mille" },
+  {
+    image: bedsteforaeldreDag.src,
+    date: "10 Oktober",
+    title: "Bedsteforældredag",
+  },
+  { image: rekorddag.src, date: "27 August", title: "Fårups store rekorddag" },
+  { image: hrSkaeg.src, date: "23 August", title: "Hr. Skæg" },
 ];
 
 const forlystelser = [
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/mineexpressen.webp`,
+    image: imgMine.src,
     title: "Mine-ekspressen",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/flagermusen.webp`,
+    image: imgFlage.src,
     title: "Flagermusen",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/trestammer.webp`,
+    image: imgTræst.src,
     title: "Træstammer",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/orkanen.webp`,
+    image: imgOrkan.src,
     title: "Orkanen",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/foenix.webp`,
+    image: imgFønix.src,
     title: "Fønix",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/falken.webp`,
+    image: imgFalke.src,
     title: "Falken",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/lynetGroen.webp`,
+    image: imgLynet.src,
     title: "Lynet",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
   {
-    image: `${import.meta.env.BASE_URL}faarupImg/forlystelser/saven.webp`,
+    image: imgSaven.src,
     title: "Saven",
     text: "En rutjebanetur rundt i bratte sving mellom træer",
   },
@@ -78,7 +92,14 @@ import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
   <Breadcrumb customizeLinks={customFaarup} />
 
   <section class="map-section flex">
-    <img class="map-section-image" src={imgHero.src} alt="" />
+    <Image
+      class="map-section-image"
+      src={imgHero}
+      alt=""
+      widths={[400, 800, 1200]}
+      format="webp"
+      loading="lazy"
+    />
     <div class="map-section-overlay"></div>
     <div class="map-section-content">
       <h1>Fårup Sommerland</h1>
@@ -126,7 +147,13 @@ import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
       Få overblikket over parkens forlystelser med vores interaktive oversigt
       (klik på billedet for at åbne)
     </p>
-    <img src={imgMap.src} alt="" />
+    <Image
+      src={imgMap}
+      alt=""
+      widths={[400, 800, 1200]}
+      format="webp"
+      loading="lazy"
+    />
   </section>
   <RecommendedPlaces />
 </Layout>
@@ -203,7 +230,6 @@ import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
   }
 
   .map-section-overlay {
-    /* backdrop-filter: blur(2px); */
     background: var(--utility-gradient-blue-right);
     z-index: 1;
   }
@@ -231,6 +257,15 @@ import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
     img {
       width: 100%;
       border-radius: var(--round-general);
+      transition: all 200ms ease-in-out;
+      cursor: pointer;
+      outline: 1px solid transparent;
+
+      &:hover {
+        transform: scale(0.98);
+        outline: 1px solid var(--accent-500);
+        outline-offset: 0.25rem;
+      }
     }
   }
 

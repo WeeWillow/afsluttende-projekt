@@ -1,14 +1,9 @@
 ---
 import ArrowRight from "phosphor-astro/ArrowRight.astro";
 import CardArticle from "../elements/CardArticle.astro";
-
-const href = `${import.meta.env.BASE_URL}artikler/blokhus`;
-
 import imgBlokhusStrand from "../../assets/blokhusStrand.webp";
 import imgVaeggerloseStrand from "../../assets/vaeggerloseStrand.jpg";
 import imgGlamping from "../../assets/glamping.jpg";
-
-console.log("BASE_URL:", import.meta.env.BASE_URL);
 ---
 
 <section class="selected-articles-section flex">
@@ -23,21 +18,21 @@ console.log("BASE_URL:", import.meta.env.BASE_URL);
       heading="Dyp tæerne ved blokhus"
       subheading="Gå en tur i sandet, bad i bølgerne eller se solen gå ned over Vesterhavet"
       src={imgBlokhusStrand}
-      href={href}
+      href={`${import.meta.env.BASE_URL}artikler/blokhus`}
     />
 
     <CardArticle
       heading="Oplev natur og strand ved Væggerløse"
       subheading="Danmarks bedste strande. Ud over den ideelle beliggenhed tæt på frisk luft og saltvand er feriehuset også tæt på butikker og det hyggelige feriested Marielyst."
       src={imgVaeggerloseStrand}
-      href={href}
+      href={`${import.meta.env.BASE_URL}artikler/blokhus`}
     />
 
     <CardArticle
       heading="Glamping hos Naturlig på Korsgaarden"
       subheading="Blot halvanden times kørsel fra København, finder du de naturskønne og afslappede rammer om Naturlig på Korsgaarden."
       src={imgGlamping}
-      href={href}
+      href={`${import.meta.env.BASE_URL}artikler/blokhus`}
     />
 
     <article class="article-card flex">

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Phone from "phosphor-astro/Phone.astro";
 import Envelope from "phosphor-astro/Envelope.astro";
 
@@ -8,7 +9,7 @@ import image from "../../assets/opdagDanmarkLogo.png";
 <footer>
   <section class="foot-top-section">
     <article>
-      <img id="foot-logo" src={image.src} alt="" />
+      <Image id="foot-logo" src={image} alt="" loading="lazy" />
       <div>
         <div class="foot-adress">
           <p>OpdagDanmark ApS</p>

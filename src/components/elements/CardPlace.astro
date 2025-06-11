@@ -1,10 +1,23 @@
 ---
+import { Image } from "astro:assets";
 const { heading = "", subheading = "", src = "", href = "#" } = Astro.props;
+const altText =
+  typeof src === "string"
+    ? src.split("/").pop()?.split(".")[0]?.replace(/[-_]/g, " ")
+    : "";
 ---
 
 <a href={href} class="place-card-link">
   <article class="place-card flex">
-    <img class="place-card-image" src={src} alt="" />
+    <Image
+      class="place-card-image"
+      src={src}
+      alt={altText ?? ""}
+      widths={[400, 800, 1200]}
+      format="webp"
+      loading="lazy"
+    />
+
     <div class="place-card-overlay"></div>
     <div class="place-card-content-container flex">
       <div class="place-card-content">

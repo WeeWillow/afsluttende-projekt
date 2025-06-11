@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
 const responseHero = await fetch(
   "https://young-gift-22aff10d38.strapiapp.com/api/home-hero",
@@ -12,7 +13,15 @@ import image from "../../assets/hero-section.jpg";
 
 <article class="hero-wrapper">
   <section class="hero-section flex">
-    <img class="hero-section-image" src={image.src} alt="" />
+    <!-- widths = astro genererer disse størrelser -->
+    <Image
+      class="hero-section-image"
+      src={image}
+      alt=""
+      widths={[400, 800, 1200]}
+      format="webp"
+      loading="lazy"
+    />
     <div class="hero-section-overlay"></div>
     <div class="hero-section-content">
       <h1>{homeHero.title}</h1>
@@ -38,7 +47,6 @@ import image from "../../assets/hero-section.jpg";
     width: min(98vw, 1600px);
     margin-left: calc(50% - min(49vw, 800px));
     margin-top: -155px;
-    margin-bottom: -6rem;
   }
 
   h1 {

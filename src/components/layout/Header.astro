@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import BurgerMenu from "../navigation/BurgerMenu.vue";
 import ButtonFunction from "../modules/ButtonFunction.vue";
+import opdagDanmarkLogo from "../../assets/opdagDanmarkLogo.png";
 
 import User from "phosphor-astro/User.astro";
 import Basket from "phosphor-astro/Basket.astro";
@@ -11,14 +13,19 @@ import MegaMenu from "../navigation/MegaMenu.vue";
 const href = "/produkter/";
 
 // const href = import.meta.env.BASE_URL + "produkter/";
-import image from "../../assets/opdagDanmarkLogo.png";
 ---
 
 <header class="flex">
   <nav class="flex">
-    <a class="nav-logo nav-left" href={import.meta.env.BASE_URL}
-      ><img class="nav-logo-img flex" src={image.src} alt="" /></a
-    >
+    <a class="nav-logo nav-left" href={import.meta.env.BASE_URL}>
+      <Image
+        class="nav-logo-img flex"
+        src={opdagDanmarkLogo}
+        alt=""
+        format="webp"
+        loading="lazy"
+      />
+    </a>
 
     <!-- desktop nav -->
     <ul class="nav-centre nav-desktop">

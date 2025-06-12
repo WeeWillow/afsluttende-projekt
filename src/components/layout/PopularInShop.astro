@@ -9,13 +9,14 @@ const response = await fetch(
 );
 const data = await response.json();
 const products = data.data;
+const href = "produkter/";
 ---
 
 <section class="pop-shop-section flex">
   <div class="pop-shop-section-content">
     <div class="pop-shop-header flex">
       <h2>{heading}</h2>
-      <a class="flex" href="#"
+      <a class="flex" href={href}
         >Se alle produkter <ArrowRight width={16} height={16} /></a
       >
     </div>

@@ -14,7 +14,10 @@ const tagColor = "var(--secondary-500)";
 const tagBgColor = "var(--secondary-200)";
 const tag = "Restaurantoplevelse";
 const aboutText = [
-  "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.", "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.", "<br>",  "Hunde er velkomne, men skal holdes i snor. Turen går gennem Silkeborg og forbi de klare Silkeborgsøer som Almind Sø, Brassø, Vejlsø, Ørnesø, Langsø og Kalgårdsø – perfekte til et sommerdyp. Du kommer også forbi Gudenåen, Danmarks længste å.",
+  "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.",
+  "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.",
+  "<br>",
+  "Hunde er velkomne, men skal holdes i snor. Turen går gennem Silkeborg og forbi de klare Silkeborgsøer som Almind Sø, Brassø, Vejlsø, Ørnesø, Langsø og Kalgårdsø – perfekte til et sommerdyp. Du kommer også forbi Gudenåen, Danmarks længste å.",
 ];
 ---
 
@@ -24,14 +27,12 @@ const aboutText = [
     <ProductImageGallery client:load />
 
     <article class="product-info-container">
-      <div class="product-tags-container">
+      <div class="product-tags-container flex">
         <div
           class="product-tag"
           style={{
             backgroundColor: tagBgColor,
             border: `1px solid ${tagColor}`,
-            padding: "3px 7px",
-            borderRadius: "50px",
           }}
         >
           <p
@@ -98,7 +99,7 @@ const aboutText = [
             <button class="minus">+</button>
           </div>
           <button class="cart">Tilføj til kurv</button>
-          <button class="heart"
+          <button class="heart flex"
             ><Heart width="24" height="24" color="var(--primary-500)" /></button
           >
         </div>
@@ -108,9 +109,11 @@ const aboutText = [
 </Layout>
 
 <style>
-
+  .product-tag {
+    padding: 0.42rem 0.6rem;
+    border-radius: var(--round-pill);
+  }
   .product-section {
-    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
@@ -121,11 +124,17 @@ const aboutText = [
     align-items: center;
 
     button {
-      width: 30px;
-      height: 30px;
+      cursor: pointer;
+      color: var(--primary-500);
+      padding: 0 0.75rem;
+      height: 38px;
       font-size: 1rem;
       background-color: var(--greyscale-100);
       border: 1px solid var(--primary-500);
+      transition: transform 100ms ease-in-out;
+      &:active {
+        transform: scale(0.97);
+      }
     }
 
     .plus {
@@ -138,10 +147,21 @@ const aboutText = [
     }
 
     input {
-      width: 50px;
-      height: 30px;
+      color: var(--primary-700);
+      width: 3rem;
+      height: 38px;
       text-align: center;
+      margin: 0 -1px;
       border: 1px solid var(--primary-500);
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
     }
   }
 
@@ -162,28 +182,50 @@ const aboutText = [
   }
 
   .cart {
+    flex: 1;
     background-color: var(--secondary-500);
-    border: none;
+    border: 1px solid transparent;
     color: var(--secondary-200);
-    padding: 8px 10%;
+    height: 38px;
     border-radius: var(--round-min);
     font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    outline: 1px solid transparent;
+
+    &:hover {
+      outline-color: var(--accent-500);
+      outline-offset: 0.2rem;
+      transform: scale(0.97);
+      border-color: var(--accent-500);
+      background: var(--accent-500);
+      color: var(--accent-100);
+    }
   }
 
   .heart {
     background-color: var(--primary-400-t2);
     border: solid 1px var(--primary-500);
     border-radius: var(--round-min);
-    padding: 3px 6px;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    transition: transform 100ms ease-in-out;
+
+    &:active {
+      transform: scale(0.97);
+    }
   }
 
   .product-btns {
     align-items: center;
     justify-content: space-between;
+    gap: 0.25rem;
   }
 
   .product-tags-container {
-    display: flex;
+    gap: 0.25rem;
     align-items: center;
   }
 
@@ -193,40 +235,44 @@ const aboutText = [
 
   .product-category-icon {
     background-color: var(--secondary-200-t2);
-    border-radius: 50%;
-    padding: 5px;
+    border-radius: var(--round-50);
+    padding: 0.25rem;
     display: inline-flex;
     border: 1px solid var(--secondary-500);
-    margin-inline: 4px;
   }
 
   h1 {
+    color: var(--primary-700);
     font-size: var(--font-size-700);
-    font-weight: var(--text-400);
+    font-weight: var(--text-700);
   }
 
   .product-brand {
-    font-weight: var(--text-300);
+    color: var(--primary-500);
+    font-weight: var(--text-400);
     margin-bottom: 20px;
   }
 
   .highlights {
-    display: flex;
     justify-content: space-between;
-  }
+    gap: .25rem 1rem;
+    flex-wrap: wrap;
+    min-width: fit-content; /*tror ikke den gør noget, men lader den være for sikkerhedsskyld*/
 
-  .highlights div {
-    padding: 10px;
-    max-width: 400px;
-    text-align: center;
-    background-color: var(--primary-400-t2);
-    color: var(--primary-600);
-    border: 1px solid var(--primary-600);
-    border-radius: var(--round-general);
-    margin-bottom: 15px;
+    div {
+      flex: 1;
+      padding: 10px;
+      width: max-content;
+      text-align: center;
+      background-color: var(--primary-400-t2);
+      color: var(--primary-600);
+      border: 1px solid var(--primary-600);
+      border-radius: var(--round-general);
+      margin-bottom: 15px;
 
-    h3 {
-      text-transform: capitalize;
+      h3 {
+        text-transform: capitalize;
+      }
     }
   }
 

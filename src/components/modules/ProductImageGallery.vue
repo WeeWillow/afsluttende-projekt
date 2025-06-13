@@ -47,6 +47,7 @@ const selectedImage = ref(imgCover)
 }
 
 .product-small-imgs {
+  padding: 0 .25rem;
   justify-content: flex-start;
   display: flex;
   flex-wrap: wrap;

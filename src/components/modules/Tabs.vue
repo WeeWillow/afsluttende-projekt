@@ -15,7 +15,7 @@ const activeTab = ref('about')
 <template>
   <!-- https://www.w3schools.com/howto/howto_js_tabs.asp -->
   <article class="tabs">
-     <!-- Når knapperne trykkes på, skifter de aktiv fane -->
+    <!-- Når knapperne trykkes på, skifter de aktiv fane -->
     <div class="tab-buttons">
       <button :class="{ 'active-tab': activeTab === 'about' }" @click="activeTab = 'about'">Om</button>
       <button :class="{ 'active-tab': activeTab === 'access' }" @click="activeTab = 'access'">Adgang</button>
@@ -27,7 +27,7 @@ const activeTab = ref('about')
       <!-- Går igennem alle tekster i arrayet i Strapi og viser dem -->
       <p v-for="(paragraph, i) in props.about" :key="i">{{ paragraph }}</p>
     </div>
-     <!-- Viser indhold fra access når den er aktiv -->
+    <!-- Viser indhold fra access når den er aktiv -->
     <div class="tab-content" v-show="activeTab === 'access'">
       <p>{{ props.access }}</p>
     </div>
@@ -38,6 +38,15 @@ const activeTab = ref('about')
 </template>
 
 <style scoped>
+.tabs {
+  padding: 1rem 0;
+  .tab-content {
+    padding: .5rem .5rem;
+    height: 10rem;
+    overflow-y: auto;
+  }
+}
+
 .tab-buttons {
   display: flex;
   background-color: var(--primary-400);
@@ -46,16 +55,19 @@ const activeTab = ref('about')
   justify-content: space-between;
   margin-bottom: 12px;
   width: 100%;
+  gap: .5rem;
 }
 
 button {
   border: none;
   background: none;
-  color: var(--greyscale-700);
-  font-weight: var(--text-500);
+  padding: .5rem 1rem;
+  border-radius: var(--round-pill);
+  flex: 1;
+  color: var(--primary-600);
+  font-weight: var(--text-600);
   font-family: "Krub", sans-serif;
   font-size: 1rem;
-  padding: 7px 30px;
   border-radius: var(--round-pill);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -63,7 +75,6 @@ button {
 
 .active-tab {
   background-color: white;
-  color: var(--primary-600);
-  font-weight: var(--text-600);
+  color: var(--primary-700);
 }
 </style>

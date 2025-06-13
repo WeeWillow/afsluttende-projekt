@@ -10,7 +10,7 @@ import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
 import DropdownPoint from "../navigation/DropdownPoint.vue";
 import MegaMenu from "../navigation/MegaMenu.vue";
 
-const href = "/produkter/";
+const href = "produkter/";
 ---
 
 <header class="flex">
@@ -52,7 +52,7 @@ const href = "/produkter/";
         />
       </li>
       <li class="nav-centre-link">
-        <a class="nav-link" href={href}>Shop</a>
+        <a class="nav-link" href={import.meta.env.BASE_URL + href}>Shop</a>
       </li>
       <li class="nav-centre-link"><a class="nav-link" href="#">Om os</a></li>
       <button class="nav-mobile-btn flex">

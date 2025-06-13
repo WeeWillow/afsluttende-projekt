@@ -16,7 +16,7 @@ const href = "produkter/";
   <div class="pop-shop-section-content">
     <div class="pop-shop-header flex">
       <h2>{heading}</h2>
-      <a class="flex" href={href}
+      <a class="flex" href={import.meta.env.BASE_URL + href}
         >Se alle produkter <ArrowRight width={16} height={16} /></a
       >
     </div>
@@ -28,12 +28,11 @@ const href = "produkter/";
 </section>
 
 <style>
+  .pop-shop-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-.pop-shop-section {
-  flex-direction: column;
-  gap: 1.5rem;
-}
-  
   .pop-shop-header {
     justify-content: space-between;
     align-items: end;
@@ -60,8 +59,8 @@ const href = "produkter/";
 
   @media screen and (min-width: 1200px) {
     .pop-shop-section-products {
-    flex-direction: row;
-    justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
-}
 </style>

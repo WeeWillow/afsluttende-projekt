@@ -4,24 +4,17 @@ import Layout from "../layouts/Layout.astro";
 import ProductImageGallery from "../components/modules/ProductImageGallery.vue";
 import Breadcrumb from "../components/modules/Breadcrumb.astro";
 import Tabs from "../components/modules/Tabs.vue";
-import { Image } from "astro:assets";
-import imgCover from "../assets/glamping.jpg";
-import imgSmallOne from "../assets/azzura.png";
-import imgSmallTwo from "../assets/bagergaarden.png";
-import imgSmallThree from "../assets/blokhusStrand.webp";
 
 import Bike from "phosphor-astro/PersonSimpleBike.astro";
 import Dog from "phosphor-astro/Dog.astro";
 import Walking from "phosphor-astro/PersonSimpleWalk.astro";
 import Heart from "phosphor-astro/Heart.astro";
 
-const images = [imgCover, imgSmallOne, imgSmallTwo, imgSmallThree];
 const tagColor = "var(--secondary-500)";
 const tagBgColor = "var(--secondary-200)";
 const tag = "Restaurantoplevelse";
 const aboutText = [
-  "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.",
-  "Hunde er velkomne, men skal holdes i snor. Turen går gennem Silkeborg og forbi de klare Silkeborgsøer som Almind Sø, Brassø, Vejlsø, Ørnesø, Langsø og Kalgårdsø – perfekte til et sommerdyp. Du kommer også forbi Gudenåen, Danmarks længste å.",
+  "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.", "Tag på en smuk cykel- og vandretur på 11,7 km i landskabet omkring Silkeborg. Ruten er moderat udfordrende og tager cirka 2 timer og 40 minutter at gennemføre. Du deler stien med andre vandrere, cyklister og løbere – området er populært året rundt og smukt i alle sæsoner.", "<br>",  "Hunde er velkomne, men skal holdes i snor. Turen går gennem Silkeborg og forbi de klare Silkeborgsøer som Almind Sø, Brassø, Vejlsø, Ørnesø, Langsø og Kalgårdsø – perfekte til et sommerdyp. Du kommer også forbi Gudenåen, Danmarks længste å.",
 ];
 ---
 
@@ -115,41 +108,13 @@ const aboutText = [
 </Layout>
 
 <style>
-  .tab-buttons {
-    display: flex;
-    background-color: var(--primary-400);
-    padding: 4px;
-    border-radius: var(--round-pill);
-    width: 100%;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-
-    button {
-      border: none;
-      background: none;
-      color: var(--greyscale-700);
-      font-weight: var(--text-500);
-      font-family: "Krub", sans-serif;
-      font-size: 1rem;
-      padding: 7px 30px;
-      border-radius: var(--round-pill);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-  }
 
   .product-section {
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
     gap: 1.5rem;
-  }
-
-  .tab-buttons button.active-tab {
-    background-color: white;
-    color: var(--primary-600);
-    font-weight: var(--text-600);
   }
 
   .product-counter {
@@ -162,6 +127,7 @@ const aboutText = [
       background-color: var(--greyscale-100);
       border: 1px solid var(--primary-500);
     }
+
     .plus {
       border-top-left-radius: var(--round-min);
       border-bottom-left-radius: var(--round-min);
@@ -270,6 +236,7 @@ const aboutText = [
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
       gap: 3rem;
+      height: fit-content;
     }
   }
 </style>

@@ -1,21 +1,22 @@
 <script setup>
-import { ref } from 'vue';
-import imgCover from '../../assets/glamping.jpg?url'
-import imgSmallOne from '../../assets/azzura.png?url'
-import imgSmallTwo from '../../assets/bagergaarden.png?url'
-import imgSmallThree from '../../assets/blokhusStrand.webp?url'
 
-const images = [imgCover, imgSmallOne, imgSmallTwo, imgSmallThree]
-console.log("this is the console log ", images);
-const selectedImage = ref(imgCover)
+import { ref } from 'vue';
+
+const props = defineProps({
+  images: Array,
+  coverImage: String,
+  title: String,
+});
+
+const selectedImage = ref(props.coverImage);
 </script>
 
 <template>
   <article class="product-imgs-container flex">
-    <img class="product-cover-img" :src="selectedImage" alt="" loading="lazy" />
+    <img class="product-cover-img" :src="selectedImage" :alt="title" loading="lazy" />
 
     <div class="product-small-imgs">
-      <img v-for="(image, index) in images" :key="index" :src="image" alt="" class="product-image" :class="{ active: selectedImage === image }" @click="selectedImage = image" />
+      <img v-for="(image, index) in images" :key="index" :src="image.formats?.small?.url || image.formats?.large?.url" :alt="title" class="product-image" :class="{ active: selectedImage === (image.formats?.large?.url || image.formats?.small?.url) }" @click="selectedImage = image.formats?.large?.url || image.formats?.small?.url" loading="lazy" />
     </div>
   </article>
 </template>

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const responseAbout = await fetch(
   "https://young-gift-22aff10d38.strapiapp.com/api/home-about",
 );
@@ -9,9 +10,15 @@ const homeAbout = dataAbout.data;
 import image from "../../assets/opdagDanmarkInfo.png";
 ---
 
-<section class="aboutUs-section flex">
-  <img src={image.src} alt="" />
+<section class="aboutUs-section">
+  <Image
+      class="hero-img"
+      src={image}
       alt="Billede af en rød og hvid VW T1 med Opdag Danmark skrevet på siden"
+      widths={[400, 800, 1200]}
+      format="webp"
+      loading="lazy"
+    />
   <article>
     <h4>{homeAbout.type}</h4>
     <h2>{homeAbout.title}</h2>

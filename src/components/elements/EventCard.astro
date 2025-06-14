@@ -1,6 +1,6 @@
 ---
 const { title, date, image } = Astro.props;
-import ButtonFunction from "../../components/modules/ButtonFunction.vue";
+import ActionButton from "../../components/modules/ActionButton.vue";
 ---
 
 <div class="events-card-link">
@@ -11,7 +11,7 @@ import ButtonFunction from "../../components/modules/ButtonFunction.vue";
     <div class="events-card-content">
       <p>{date}</p>
       <h3>{title}</h3>
-      <ButtonFunction label="Læs mere" iconType="external" />
+      <ActionButton label="Læs mere" iconType="external" />
       <div class="events-card-btn"></div>
     </div>
   </article>

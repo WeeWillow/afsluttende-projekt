@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { PhList, PhCaretDown, PhMagnifyingGlass, PhUser, PhBasket } from "@phosphor-icons/vue";
 
-import ButtonFunction from '../modules/ButtonFunction.vue';
+import ActionButton from '../modules/ActionButton.vue';
 
 const menuOpen = ref(false);
 const toggle = () => {
@@ -43,7 +43,7 @@ const produkterHref = baseUrl + 'produkter';
 
       <div class="nav-mobile-button-list flex">
         <!-- download app button-->
-        <ButtonFunction />
+        <ActionButton />
         <div class="nav-mobile-users flex">
           <a class="nav-mobile-btn flex" href="#">
             <PhUser :size="16" weight="fill" />

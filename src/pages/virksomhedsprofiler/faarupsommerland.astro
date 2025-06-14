@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
 
-import ButtonFunction from "../../components/modules/ButtonFunction.vue";
+import ActionButton from "../../components/modules/ActionButton.vue";
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
 import EventCard from "../../components/elements/CardEvents.astro";
 import AttractionCard from "../../components/elements/CardAttraction.astro";
@@ -106,12 +106,12 @@ import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
       <h2>De største oplevelser er dem vi har sammen</h2>
     </div>
     <div class="map-section-buttons flex">
-      <ButtonFunction
+      <ActionButton
         label="Besøg Hjemmesiden"
         iconType="external"
         variant="outline"
       />
-      <ButtonFunction label="Køb billet" iconType="external" />
+      <ActionButton label="Køb billet" iconType="external" />
     </div>
   </section>
 

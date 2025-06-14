@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BurgerMenu from "../navigation/BurgerMenu.vue";
-import ButtonFunction from "../modules/ButtonFunction.vue";
+import ActionButton from "../modules/ActionButton.vue";
 import opdagDanmarkLogo from "../../assets/opdagDanmarkLogo.png";
 
 import User from "phosphor-astro/User.astro";
@@ -61,7 +61,7 @@ const href = "produkter/";
     </ul>
 
     <div class="nav-right nav-desktop flex">
-      <ButtonFunction client:load />
+      <ActionButton client:load />
       <a class="nav-mobile-btn flex" href="#">
         <User width="16" height="16" />
       </a>

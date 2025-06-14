@@ -8,8 +8,8 @@ import Heart from "phosphor-astro/Heart.astro";
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
 import Tabs from "../../components/modules/Tabs.vue";
 import ProductImageGallery from "../../components/modules/ProductImageGallery.vue";
-import KlubDanmark from "../../components/layout/KlubDanmark.astro";
-import PopularInShop from "../../components/layout/PopularInShop.astro";
+import KlubDanmark from "../../components/layout/KlubDanmarkBanner.astro";
+import ShopSection from "../../components/layout/ShopSection.astro";
 
 // https://medium.com/@flnzba/dynamic-routes-in-astro-load-parameters-from-json-be766a7a2a17
 // Definere en asynkron funktion
@@ -209,7 +209,7 @@ const aboutText = about.map((p) => p.children[0].text);
   </section>
 
   <KlubDanmark />
-  <PopularInShop heading="Anbefalede produkter" />
+  <ShopSection heading="Anbefalede produkter" />
 </Layout>
 
 <style>

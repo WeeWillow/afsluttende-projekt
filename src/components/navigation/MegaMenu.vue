@@ -1,6 +1,6 @@
 <script setup>
 // import custom composable til at megamenu logik
-import { useMegaMenu } from "../../composables/useMegaMenu";
+import { useMegaMenu } from "../../js/composables/useMegaMenu";
 
 // Importerer de sider, der kan vises inde i menuen
 import GaaPaaOpdagelse from "./GaaPaaOpdagelse.vue";

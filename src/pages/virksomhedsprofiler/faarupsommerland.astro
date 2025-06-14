@@ -5,9 +5,9 @@ import Layout from "../../layouts/Layout.astro";
 
 import ActionButton from "../../components/modules/ActionButton.vue";
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
-import EventCard from "../../components/elements/CardEvents.astro";
-import AttractionCard from "../../components/elements/CardAttraction.astro";
-import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
+import EventCard from "../../components/elements/EventCard.astro";
+import AttractionCard from "../../components/elements/AttractionCard.astro";
+import PlacesSection from "../../components/layout/PlacesSection.astro";
 
 import moterMille from "../../assets/faarupImg/moterMille.webp";
 import bedsteforaeldreDag from "../../assets/faarupImg/bedsteforaeldreDag.webp";
@@ -155,7 +155,7 @@ import imgMap from "../../assets/faarupImg/interaktivt-kort.jpeg";
       loading="lazy"
     />
   </section>
-  <RecommendedPlaces />
+  <PlacesSection />
 </Layout>
 
 <style>

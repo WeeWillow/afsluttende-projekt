@@ -1,13 +1,13 @@
 ---
 import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
-import ProductCard from "../../components/elements/CardProduct.astro";
+import ProductCard from "../../components/elements/ProductCard.astro";
 
 import Breadcrumb from "../../components/modules/Breadcrumb.astro";
-import Filter from "../../components/modules/Filter.vue";
-import GuideToDenmark from "../../components/layout/GuideToDenmark.astro";
-import PopularInShop from "../../components/layout/PopularInShop.astro";
-import RecommendedPlaces from "../../components/layout/RecommendedPlaces.astro";
+import Filter from "../../components/modules/ProductFilter.vue";
+import AppBanner from "../../components/layout/AppBanner.astro";
+import ShopSection from "../../components/layout/ShopSection.astro";
+import PlacesSection from "../../components/layout/PlacesSection.astro";
 
 const response = await fetch(
   "https://young-gift-22aff10d38.strapiapp.com/api/products?populate=*",
@@ -46,9 +46,9 @@ const products = data.data;
       </div>
     </article>
   </section>
-  <PopularInShop heading="Flere produkter" />
-  <RecommendedPlaces />
-  <GuideToDenmark />
+  <ShopSection heading="Flere produkter" />
+  <PlacesSection />
+  <AppBanner />
 </Layout>
 
 <style>

@@ -47,7 +47,7 @@ const Icon = computed(() =>
 );
 
 function clickHandler() {
-  alert('Button clicked!');
+  alert('Hent appen!');
 };
 </script>
 

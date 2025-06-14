@@ -47,7 +47,7 @@ import imgHentAppen from '../../assets/cta-hentappen.png';
     display: flex;
     justify-content: space-between;
     padding: 2rem;
-    background: var(--primary-100-t1);
+    background: var(--primary-200-t1);
     backdrop-filter: blur(15px);
     border-radius: var(--round-25);
     border: 1px solid var(--primary-500-t2);

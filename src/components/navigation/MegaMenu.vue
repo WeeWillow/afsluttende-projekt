@@ -1,34 +1,31 @@
-<script setup>
-// import custom composable til at megamenu logik
-import { useMegaMenu } from "../../js/composables/useMegaMenu";
+<script setup lang="ts">
+import { computed, onMounted } from "vue";
+import { useMegaMenu } from "../../js/composables/useMegaMenu"; // import custom composable til megamenu logik
+import { dropdownContentData } from "../../js/data/dropdownData"; // import data til dropdown
+import type { DropdownContent } from '../../js/types/menuTypes';
 
-// Importerer de sider, der kan vises inde i menuen
-import GaaPaaOpdagelse from "./GaaPaaOpdagelse.vue";
-import PlanlaegDinTur from "./PlanlaegDinTur.vue";
-import DanmarksBedste from "./DanmarksBedste.vue";
+import EntryPointBlock from "./EntryPointBlock.vue"; // importerer entry point block
+import DropdownSection from "./DropdownSection.vue"; // importerer dropdown section
 
-// importerer entry point block
-import EntryPointBlock from "./EntryPointBlock.vue";
-
-// Får adgang til defineret værdier og funktioner fra useMegaMenu.js
-const { isOpen, activeSlot, hide, cancelHide } = useMegaMenu();
-
-const slots = {
-  GaaPaaOpdagelse,
-  PlanlaegDinTur,
-  DanmarksBedste
-};
-
+// cta billeder
 import imgNyhedsbrev from '../../assets/cta-nyhedsbrev.png';
 import imgKlubDanmark from '../../assets/cta-klubdanmark.png';
 import imgHentAppen from '../../assets/cta-hentappen.png';
+
+const { isOpen, activeSlot, hide, cancelHide } = useMegaMenu();
+
+const current = computed<DropdownContent | null>(() =>
+  activeSlot.value !== null ? dropdownContentData[activeSlot.value] : null
+);
 </script>
 
 <template>
   <!-- Viser menuen, hvis isOpen er sand. Den forbliver åben når man holder musen over og lukker når man forlader den -->
   <section class="mega-menu" v-if="isOpen" @mouseenter="cancelHide" @mouseleave="hide">
+
     <!-- Viser den valgte navigation -->
-    <component :is="slots[activeSlot]" />
+    <DropdownSection v-if="current" :blocks="current.blocks" /> <!-- viser kun indhold hvis det eksisterer -->
+
     <div class="cta-list flex">
       <EntryPointBlock heading="Nyhedsbrev" :imgSrc="imgNyhedsbrev.src" client:load />
       <EntryPointBlock heading="KlubDanmark" :imgSrc="imgKlubDanmark.src" client:load />
@@ -53,7 +50,6 @@ import imgHentAppen from '../../assets/cta-hentappen.png';
     border: 1px solid var(--primary-500-t2);
     max-height: 75vh;
     gap: 2rem;
-    flex: 1;
   }
 
   .cta-list {

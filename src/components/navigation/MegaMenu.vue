@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useMegaMenu } from "../../js/composables/useMegaMenu"; // import custom composable til megamenu logik
 import { dropdownContentData } from "../../js/data/dropdownData"; // import data til dropdown
 import type { DropdownContent } from '../../js/types/menuTypes';

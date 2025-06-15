@@ -1,13 +1,15 @@
 ---
 import "../styles/global.css";
+import "../styles/menu.css";
 import Layout from "../layouts/Layout.astro";
-import Map from "../components/layout/Map.astro";
-import GuideToDenmark from "../components/layout/GuideToDenmark.astro";
 import ForsideHero from "../components/layout/ForsideHero.astro";
-import AboutUs from "../components/layout/AboutUs.astro";
-import PopularInShop from "../components/layout/PopularInShop.astro";
-import SelectedArticles from "../components/layout/SelectedArticles.astro";
-import RecommendedPlaces from "../components/layout/RecommendedPlaces.astro";
+import AboutSection from "../components/layout/AboutSection.astro";
+import PlacesSection from "../components/layout/PlacesSection.astro";
+import AppBanner from "../components/layout/AppBanner.astro";
+import ArticlesSection from "../components/layout/ArticlesSection.astro";
+import MapBanner from "../components/layout/MapBanner.astro";
+import ShopSection from "../components/layout/ShopSection.astro";
+
 // import gemt til senere udvikling
 // import DanmarksBedsteSection from "../components/layout/DanmarksBedsteSection.astro";
 
@@ -20,18 +22,19 @@ import RecommendedPlaces from "../components/layout/RecommendedPlaces.astro";
 
 <Layout title="OpdagDanmark">
   <ForsideHero />
-  
-  <!-- <section>
-    <FocusEntryPoint />
-  </section> -->
-  
-  <AboutUs />
-  <RecommendedPlaces />
 
-  <GuideToDenmark />
+  <AboutSection />
+  
+  <PlacesSection />
+
+  <AppBanner />
+  
+  <ArticlesSection />
+
+  <MapBanner />
+  
+  <ShopSection />
+
   <!-- komponent gemt til senere udvikling -->
   <!-- <DanmarksBedsteSection/> -->
-  <SelectedArticles />
-  <Map />
-  <PopularInShop />
 </Layout>

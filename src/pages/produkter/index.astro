@@ -1,5 +1,6 @@
 ---
 import "../../styles/global.css";
+import "../../styles/menu.css";
 import Layout from "../../layouts/Layout.astro";
 import ProductCard from "../../components/elements/ProductCard.astro";
 
@@ -52,25 +53,27 @@ const products = data.data;
 </Layout>
 
 <style>
-  h2,
-  h3,
-  p,
-  form,
-  select {
-    color: var(--primary-700);
-  }
-  form,
-  select {
-    font-family: "Krub", sans-serif;
-  }
+  .products-section {
+    h2,
+    h3,
+    p,
+    form,
+    select {
+      color: var(--primary-700);
+    }
+    form,
+    select {
+      font-family: "Krub", sans-serif;
+    }
 
-  form select {
-    padding: 2px;
-    padding-right: 20px;
-    border-radius: var(--round-min);
-    font-size: 0.9rem;
-    border: 1px solid var(--primary-700);
-    margin-left: 10px;
+    form select {
+      padding: 2px;
+      padding-right: 20px;
+      border-radius: var(--round-min);
+      font-size: 0.9rem;
+      border: 1px solid var(--primary-700);
+      margin-left: 10px;
+    }
   }
 
   .products-sorting {

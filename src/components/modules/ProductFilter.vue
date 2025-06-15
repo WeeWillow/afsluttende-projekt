@@ -3,7 +3,7 @@ import { PhCaretDown } from "@phosphor-icons/vue";
 </script>
 <template>
   <!-- https://www.w3schools.com/howto/howto_js_accordion.asp -->
-  <section>
+  <section class="filter-section">
     <button class="filter-accordion flex">Tema
       <PhCaretDown :size="20" :color="'var(--primary-700)'" />
     </button>
@@ -22,7 +22,7 @@ import { PhCaretDown } from "@phosphor-icons/vue";
   </section>
 </template>
 <style>
-section {
+s.filter-section {
   margin-bottom: 30px;
 }
 

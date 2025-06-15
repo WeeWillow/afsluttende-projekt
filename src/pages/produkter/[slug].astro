@@ -1,5 +1,6 @@
 ---
 import "../../styles/global.css";
+import "../../styles/menu.css";
 import Layout from "../../layouts/Layout.astro";
 import Bike from "phosphor-astro/PersonSimpleBike.astro";
 import Dog from "phosphor-astro/Dog.astro";
@@ -89,6 +90,7 @@ const aboutText = about.map((p) => p.children[0].text);
 <Layout title={title}>
   <Breadcrumb />
   <section class="product-section">
+    
     <ProductImageGallery
       images={images}
       coverImage={coverImage}

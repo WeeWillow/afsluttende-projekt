@@ -73,4 +73,32 @@ import image from "../../assets/map-section.png";
       line-height: 100%;
     }
   }
+
+  @media screen and (max-width: 1199px) {
+    .map-section {
+      padding: 1rem;
+      justify-content: space-between;
+      height: 12rem;
+
+      .map-section-content {
+        h2 {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+        }
+        h3 {
+          padding: .5rem 0 0;
+          font-size: 1rem;
+          width: 100%;
+        }
+      }
+    }
+    .map-section-buttons {
+      justify-content: space-between;
+    }
+
+    .map-section-overlay {
+      backdrop-filter: blur(3px);
+      background: var(--utility-gradient-blue-right);
+    }
+  }
 </style>

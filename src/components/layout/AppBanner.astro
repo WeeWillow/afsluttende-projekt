@@ -74,4 +74,36 @@ import image from "../../assets/guide-section.png";
       line-height: 100%;
     }
   }
+
+  @media screen and (max-width: 1199px) {
+    .guide-section-overlay {
+      backdrop-filter: blur(2px);
+      background: var(--utility-gradient-blue-left);
+    }
+    .guide-section {
+      justify-content: space-between;
+      padding: 1.2rem;
+      height: 11.5rem;
+
+      .guide-section-content {
+        h2 {
+          font-size: 1.8rem;
+          line-height: 1.8rem;
+        }
+
+        h3 {
+          font-size: 1.1rem;
+          padding: 0.25rem 0 0;
+          width: 100%;
+          font-weight: 400;
+        }
+      }
+      .guide-section-cta {
+        p {
+          font-size: 0.85rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
 </style>

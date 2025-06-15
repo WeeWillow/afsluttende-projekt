@@ -1,11 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import { PhCaretDown } from "@phosphor-icons/vue";
-import { useMegaMenu } from "../../composables/useMegaMenu";
+import { useMegaMenu } from "../../js/composables/useMegaMenu";
 
-const props = defineProps({
-  label: String,
-  slotName: String,
-});
+const props = defineProps<{
+  label: string;
+  slotName: string;
+}>();
 
 const { show, hide } = useMegaMenu();
 </script>

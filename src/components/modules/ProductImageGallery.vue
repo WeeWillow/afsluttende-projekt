@@ -9,15 +9,32 @@ const props = defineProps({
 });
 
 const selectedImage = ref(props.coverImage);
+
 </script>
 
 <template>
   <article class="product-imgs-container flex">
-    <img class="product-cover-img" :src="selectedImage" :alt="title" loading="lazy" />
+
+    <img 
+    class="product-cover-img" 
+    :src="selectedImage" 
+    :alt="title" 
+    loading="lazy" 
+    />
 
     <div class="product-small-imgs">
-      <img v-for="(image, index) in images" :key="index" :src="image.formats?.small?.url || image.formats?.large?.url" :alt="title" class="product-image" :class="{ active: selectedImage === (image.formats?.large?.url || image.formats?.small?.url) }" @click="selectedImage = image.formats?.large?.url || image.formats?.small?.url" loading="lazy" />
+      <img 
+      v-for="(image, index) in images" 
+      :key="index" 
+      :src="image.formats?.small?.url || image.formats?.large?.url" 
+      :alt="title" 
+      class="product-image" 
+      :class="{ active: selectedImage === (image.formats?.large?.url || image.formats?.small?.url) }" 
+      @click="selectedImage = image.formats?.large?.url || image.formats?.small?.url" 
+      loading="lazy" 
+      />
     </div>
+
   </article>
 </template>
 
